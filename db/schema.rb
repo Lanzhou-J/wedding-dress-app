@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_071221) do
+ActiveRecord::Schema.define(version: 2020_05_11_121637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_05_11_071221) do
   create_table "dresses", force: :cascade do |t|
     t.string "brand"
     t.integer "price"
-    t.integer "shiping_cost"
     t.text "description"
     t.boolean "is_sold"
     t.boolean "is_preorder"
@@ -26,6 +25,68 @@ ActiveRecord::Schema.define(version: 2020_05_11_071221) do
     t.string "texture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "shop_id", null: false
+    t.bigint "size_id", null: false
+    t.bigint "silhouette_id", null: false
+    t.integer "inventory"
+    t.bigint "neckline_id", null: false
+    t.bigint "length_id", null: false
+    t.bigint "sleeve_id", null: false
+    t.string "name"
+    t.integer "shipping_cost"
+    t.index ["length_id"], name: "index_dresses_on_length_id"
+    t.index ["neckline_id"], name: "index_dresses_on_neckline_id"
+    t.index ["shop_id"], name: "index_dresses_on_shop_id"
+    t.index ["silhouette_id"], name: "index_dresses_on_silhouette_id"
+    t.index ["size_id"], name: "index_dresses_on_size_id"
+    t.index ["sleeve_id"], name: "index_dresses_on_sleeve_id"
   end
 
+  create_table "lengths", force: :cascade do |t|
+    t.string "length"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "necklines", force: :cascade do |t|
+    t.string "style"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string "name"
+    t.integer "merchant_or_personal"
+    t.string "location"
+    t.text "description"
+    t.date "opening_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "has_physical_store"
+  end
+
+  create_table "silhouettes", force: :cascade do |t|
+    t.string "style"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sizes", force: :cascade do |t|
+    t.integer "size"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sleeves", force: :cascade do |t|
+    t.string "style"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "dresses", "lengths"
+  add_foreign_key "dresses", "necklines"
+  add_foreign_key "dresses", "shops"
+  add_foreign_key "dresses", "silhouettes"
+  add_foreign_key "dresses", "sizes"
+  add_foreign_key "dresses", "sleeves", column: "sleeve_id"
 end
