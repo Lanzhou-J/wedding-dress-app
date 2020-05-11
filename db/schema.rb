@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_101959) do
+ActiveRecord::Schema.define(version: 2020_05_11_121637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_05_11_101959) do
   create_table "dresses", force: :cascade do |t|
     t.string "brand"
     t.integer "price"
-    t.integer "shiping_cost"
     t.text "description"
     t.boolean "is_sold"
     t.boolean "is_preorder"
@@ -34,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_101959) do
     t.bigint "length_id", null: false
     t.bigint "sleeve_id", null: false
     t.string "name"
+    t.integer "shipping_cost"
     t.index ["length_id"], name: "index_dresses_on_length_id"
     t.index ["neckline_id"], name: "index_dresses_on_neckline_id"
     t.index ["shop_id"], name: "index_dresses_on_shop_id"
@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 2020_05_11_101959) do
     t.string "location"
     t.text "description"
     t.date "opening_time"
-    t.boolean "has_pysical_store"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "has_physical_store"
   end
 
   create_table "silhouettes", force: :cascade do |t|

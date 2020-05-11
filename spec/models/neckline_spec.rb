@@ -9,7 +9,7 @@ RSpec.describe Neckline, type: :model do
     expect(subject).to be_valid
   end
 
-  it 'is not valid without a length attribute' do
+  it 'is not valid without a style attribute' do
     subject.style = nil
     expect(subject).to_not be_valid
   end

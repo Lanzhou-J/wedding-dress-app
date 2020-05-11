@@ -7,7 +7,7 @@ RSpec.describe Shop, type: :model do
       merchant_or_personal: 'merchant',
       location: 'China',
       opening_time: Date.today,
-      has_pysical_store: true
+      has_physical_store: true
     )
   }
 

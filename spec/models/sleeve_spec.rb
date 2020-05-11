@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Silhouette, type: :model do
+RSpec.describe Sleeve, type: :model do
   subject {
     described_class.new(
-      style: 'A-line'
+      style: 'Short sleeves'
     )
   }
 
@@ -17,9 +17,10 @@ RSpec.describe Silhouette, type: :model do
     length_id: 1,
     shipping_cost: 2000,
     neckline_id: 1,
-    silhouette_id: 1
+    silhouette_id: 1,
+    sleeve_id: 1
   )
-  
+
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
   end
@@ -30,7 +31,7 @@ RSpec.describe Silhouette, type: :model do
   end
 
   it 'has many dresses' do
-    relation = Silhouette.reflect_on_association(:dresses)
+    relation = Sleeve.reflect_on_association(:dresses)
     expect(relation.macro).to eql(:has_many)
   end
 
