@@ -1,0 +1,2 @@
+class Sleeve < ApplicationRecord
+end

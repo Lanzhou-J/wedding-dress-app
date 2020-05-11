@@ -1,0 +1,2 @@
+class Silhouette < ApplicationRecord
+end

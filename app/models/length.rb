@@ -1,0 +1,2 @@
+class Length < ApplicationRecord
+end
