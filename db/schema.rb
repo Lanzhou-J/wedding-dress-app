@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_071221) do
+ActiveRecord::Schema.define(version: 2020_05_11_082750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2020_05_11_071221) do
     t.boolean "is_preorder"
     t.string "color"
     t.string "texture"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string "name"
+    t.integer "merchant_or_personal"
+    t.string "location"
+    t.text "description"
+    t.date "opening_time"
+    t.boolean "has_pysical_store"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
