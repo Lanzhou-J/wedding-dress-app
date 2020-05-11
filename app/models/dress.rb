@@ -1,5 +1,5 @@
 class Dress < ApplicationRecord
-  validates :name, presence: true  
+  validates :name, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :color, presence: true
   validates :texture, presence: true
