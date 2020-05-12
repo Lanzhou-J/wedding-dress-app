@@ -10,7 +10,9 @@ require_relative "data/neckline_data"
 require_relative "data/silhouette_data"
 require_relative "data/sleeve_data"
 require_relative "data/length_data"
+require_relative "data/user_data"
 
+User.destroy_all
 Shop.destroy_all
 Dress.destroy_all
 Size.destroy_all
@@ -18,6 +20,13 @@ Silhouette.destroy_all
 Sleeve.destroy_all
 Length.destroy_all
 Neckline.destroy_all
+
+puts "Seeding Users"
+
+users.each do |user|
+  user_record = User.create(user)
+end
+puts "Successfully seeded Users ✅"
 
 puts "Seeding Necklines"
 
@@ -60,9 +69,9 @@ puts "-" * 20
 puts "Seeding Shops"
 shop = Shop.create(name: 'Obride Bridal House', opening_time: Date.today, merchant_or_personal: 'merchant')
 
-shop = Shop.create(name: 'Eternal Bridal', opening_time: Date.today, merchant_or_personal: 'merchant')
+shop = Shop.create(name: 'Eternal Bridal', opening_time: Date.today, merchant_or_personal: 'merchant', user_id: 1)
 
-shop = Shop.create(name: "Lan's shop", opening_time: Date.today, merchant_or_personal: 'personal')
+shop = Shop.create(name: "Lan's shop", opening_time: Date.today, merchant_or_personal: 'personal', user_id: 3)
 puts "Successfully seeded Shops ✅"
 
 puts "-" * 20

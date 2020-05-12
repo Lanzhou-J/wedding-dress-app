@@ -18,7 +18,7 @@ def sleeves
 
     { 
       style: 'Regular Straps'
-    },
+    }
 
   ]
 end
