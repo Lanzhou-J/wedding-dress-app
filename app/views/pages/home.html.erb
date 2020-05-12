@@ -1,0 +1,23 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<div class="banner">
+  <div class="content">  
+    <div class="hero">
+    </div>
+    <div class="header">
+      <h1>Wedding dress marketplace</h1>
+      <h3>Beautiful in white 🧖‍♀️</h3>
+      <div class="sign-up-button">
+        <%= button_to "Sign up", new_user_registration_path, method: :get %>
+      </div>
+      <div class="log-in-button">
+        <%= button_to "Log in", new_user_session_path, method: :get %>
+      </div>
+      <div class="log-out-button">
+        <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>

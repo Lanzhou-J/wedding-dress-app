@@ -8,7 +8,11 @@
 
 require_relative "data/neckline_data"
 require_relative "data/silhouette_data"
+require_relative "data/sleeve_data"
+require_relative "data/length_data"
+require_relative "data/user_data"
 
+User.destroy_all
 Shop.destroy_all
 Dress.destroy_all
 Size.destroy_all
@@ -17,43 +21,86 @@ Sleeve.destroy_all
 Length.destroy_all
 Neckline.destroy_all
 
+puts "Seeding Users"
+
+users.each do |user|
+  user_record = User.create(user)
+end
+puts "Successfully seeded Users ✅"
+
 puts "Seeding Necklines"
 
 necklines.each do |neckline|
   neckline_record = Neckline.create(neckline)
 end
-
 puts "Successfully seeded Necklines ✅"
+
 puts "-" * 20
 puts "Seeding Silhouettes"
 silhouettes.each do |silhouette|
   silhouette_record = Silhouette.create(silhouette)
 end
-
 puts "Successfully seeded Silhouettes ✅"
 
-# shop = Shop.create(name: 'Obride Bridal House', opening_time: Date.today, merchant_or_personal: 'merchant')
+puts "-" * 20
+puts "Seeding Sleeves"
+sleeves.each do |sleeve|
+  sleeve_record = Sleeve.create(sleeve)
+end
+puts "Successfully seeded Sleeves ✅"
 
-# size = Size.create(size: 8)
+puts "-" * 20
+puts "Seeding Lengths"
+lengths.each do |length|
+  length_record = Length.create(length)
+end
+puts "Successfully seeded Lengths ✅"
 
-# length = Length.create(length: 'mini')
+puts "-" * 20
+puts "Seeding Sizes"
+n = 6
+while n != 28
+  Size.create(size: n)
+  n += 2
+end
+puts "Successfully seeded Sizes ✅"
 
-# neckline = Neckline.create(style: 'V-neck')
+puts "-" * 20
+puts "Seeding Shops"
+shop = Shop.create(name: 'Obride Bridal House', opening_time: Date.today, merchant_or_personal: 'merchant')
 
-# silhouette = Silhouette.create(style: 'A-line')
+shop = Shop.create(name: 'Eternal Bridal', opening_time: Date.today, merchant_or_personal: 'merchant', user_id: 1)
 
-# sleeve = Sleeve.create(style: 'short-sleeve')
+shop = Shop.create(name: "Lan's shop", opening_time: Date.today, merchant_or_personal: 'personal', user_id: 3)
+puts "Successfully seeded Shops ✅"
 
-# subject { described_class.new(
-#   name: '2020 New style light elegant wedding dress',
-#   price: 80000,
-#   color: 'white',
-#   texture: 'lace',
-#   shop_id: 1,
-#   size_id: 1,
-#   length_id: 1,
-#   shipping_cost: 2000,
-#   neckline_id: 1,
-#   silhouette_id: 1,
-#   sleeve_id: 1
-# )}
+puts "-" * 20
+puts "Seeding Dresses"
+dress = Dress.create(
+  name: '2020 New style light elegant wedding dress',
+  price: 80000,
+  color: 'white',
+  texture: 'lace',
+  shop_id: 1,
+  size_id: 1,
+  length_id: 1,
+  shipping_cost: 2000,
+  neckline_id: 1,
+  silhouette_id: 1,
+  sleeve_id: 1
+)
+
+dress = Dress.create(
+  name: 'SABRINA ROSA CLARA COUTURE COLLECTION',
+  price: 300000,
+  color: 'white',
+  texture: 'lace',
+  shop_id: 2,
+  size_id: 3,
+  length_id: 5,
+  shipping_cost: 2000,
+  neckline_id: 1,
+  silhouette_id: 1,
+  sleeve_id: 1
+)
+puts "Successfully seeded Dresses ✅"
