@@ -67,3 +67,6 @@ Style/HashTransformKeys:
 
 Style/HashTransformValues:
   Enabled: true
+
+Style/SymbolArray:
+  Enabled: false
