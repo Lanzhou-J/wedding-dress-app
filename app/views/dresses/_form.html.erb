@@ -1,0 +1,67 @@
+<%= form_with model: @dress, local: true do |form| %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, placeholder: 'A new wedding dress name', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :brand %>
+    <%= form.text_field :brand, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :price %>
+    <%= form.text_field :price, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :shipping_cost %>
+    <%= form.text_field :shipping_cost, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :color %>
+    <%= form.text_field :color, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :texture %>
+    <%= form.text_field :texture, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :shop_id %>
+    <%= form.collection_select(:shop_id, Shop.all, :id, :name, class: 'form-control') %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :size_id %>
+    <%= form.collection_select(:size_id, Size.all, :id, :size, class: 'form-control') %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :silhouette_id %>
+    <%= form.collection_select(:silhouette_id, Silhouette.all, :id, :style, class: 'form-control') %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :neckline_id %>
+    <%= form.collection_select(:neckline_id, Neckline.all, :id, :style, class: 'form-control') %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :length_id %>
+    <%= form.collection_select(:length_id, Length.all, :id, :length, class: 'form-control') %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :sleeve_id %>
+    <%= form.collection_select(:sleeve_id, Sleeve.all, :id, :style, class: 'form-control') %>
+  </div>
+  
+  <div class="form-group col-md-6">
+    <%= form.submit class: 'btn btn-primary mb-2' %>
+  </div>
+
+<% end %>
