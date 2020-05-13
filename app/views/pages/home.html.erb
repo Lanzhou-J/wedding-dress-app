@@ -1,38 +1,33 @@
-<title>Cover Template for Bootstrap</title>
+<body class="home-body text-center">
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">Beautiful in white</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link" href="#">Introduction</a>
+          <a class="nav-link" href="#">Contact</a>
+          <% if user_signed_in? %>
+          <a style="margin-left: 11px;"><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link'%></a>
+          <% end %>
+        </nav>
+      </div>
+    </header>
 
-<!-- Custom styles for this template -->
-<link href="cover.css" rel="stylesheet">
-</head>
-
-<body class="text-center">
-
-<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-  <header class="masthead mb-auto">
-    <div class="inner">
-      <h3 class="masthead-brand">Beautiful in white</h3>
-      <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">Introduction</a>
-        <a class="nav-link" href="#">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main role="main" class="inner cover">
-    <h1 class="cover-heading">Wedding dress marketplace</h1>
-    <p class="lead">Find your dream wedding dress.</p>
-      <p class="lead"">
-        <%= button_to "Sign up", new_user_registration_path, method: :get, class: 'btn btn-lg btn-primary' %>
-      </p>
-      <p class = "lead">
-        <%= button_to "Log in", new_user_session_path, method: :get, class: 'btn btn-lg btn-secondary' %>
-      </p>
-      <p class = "lead">
-        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: 'btn btn-lg btn-outline-danger' %>
-      </p>
-  </main>
-
-
-</div>
-
+    <main role="main" class="inner cover">
+      <h1 class="cover-heading">Wedding dress marketplace</h1>
+      <p class="lead">Find your dream wedding dress.</p>
+        <p class="lead"">
+          <%= button_to "Sign up", new_user_registration_path, method: :get, class: 'btn btn-lg btn-primary' %>
+        </p>
+        <p class = "lead">
+          <%= button_to "Log in", new_user_session_path, method: :get, class: 'btn btn-lg btn-secondary' %>
+        </p>
+      <% if user_signed_in? %>
+        <p class = "lead">
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, class: 'btn btn-lg btn-outline-danger' %>
+        </p>
+      <% end %>
+    </main>
+  </div>
 </body>
