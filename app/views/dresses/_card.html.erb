@@ -1,11 +1,9 @@
 <div class="card text-center my-3 col-md-4 col-xs-12" style="max-width:30%; min-width:18rem;">
   <div class="card-body">
-
+    <%= image_tag picture_for(dress) , alt: "#{dress.name} image", class: 'card-img-top img_fluid card-picture' %>
     <h5 class="card-title"><%= dress.name %></h5>
     <h6 class="card-subtitle mb-2 text-muted"><%= dress.price %></h6>
     <p class="card-text"><%= dress.shop.name %></p>
     <%= link_to 'View', dress_path(dress), class: 'btn btn-primary' %>
-  
-
   </div>
 </div>
