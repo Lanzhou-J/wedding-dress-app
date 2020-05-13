@@ -44,7 +44,7 @@ class DressesController < ApplicationController
       :name, :brand, :rating, :price,
       :description, :is_sold, :is_preorder, :color, :texture, :shop_id,
       :size_id, :length_id, :sleeve_id, :neckline_id,
-      :silhouette_id, :shipping_cost
+      :silhouette_id, :shipping_cost, :picture
     )
   end
 

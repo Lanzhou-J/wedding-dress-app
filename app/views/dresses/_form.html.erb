@@ -60,6 +60,11 @@
     <%= form.collection_select(:sleeve_id, Sleeve.all, :id, :style, class: 'form-control') %>
   </div>
   
+  <div class="form-group">
+    <%= form.label :picture %>
+    <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+  </div>
+  
   <div class="form-group col-md-6">
     <%= form.submit class: 'btn btn-primary mb-2' %>
   </div>

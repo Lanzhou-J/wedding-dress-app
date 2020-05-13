@@ -1,5 +1,6 @@
 <div class="show-content">
   <div class="show-movie-attributes-wrapper">
+    <%= image_tag picture_for(@dress) , alt: "#{@dress.name} image", class: 'card-img-top img_fluid ml-2', style: 'width:40%;'%> 
     <div class="col-md-8">
       <h1 class = "name"><%= @dress.name %></h1>
       <div class = "movie-attributes">
