@@ -17,7 +17,11 @@ class DressesController < ApplicationController
   end
 
   def update
-    # update
+    if @dress.update(dress_params)
+      redirect_to @dress
+    else
+      render :edit
+    end
   end
 
   def edit
