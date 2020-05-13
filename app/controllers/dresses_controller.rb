@@ -6,6 +6,14 @@ class DressesController < ApplicationController
 
   def create
     @dress = Dress.new(dress_params)
+
+    if @dress.errors.any?
+      render :new
+    else
+      flash[:success] = "You successfully created a new product!"
+      @dress.save
+      redirect_to @dress
+    end
   end
 
   def update
