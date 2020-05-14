@@ -104,9 +104,20 @@ dress = Dress.create(
   sleeve_id: 1
 )
 
+random_num = rand(1..5)
 4.times do
   dress = Dress.create(
-    name:
+    name: "Dress#{Dress.count + 1}",
+    price: 100000,
+    shipping_cost:2000,
+    color: 'white',
+    texture: 'satin',
+    shop_id: rand(1..2),
+    size_id: random_num,
+    length_id: random_num,
+    neckline_id: random_num,
+    silhouette_id: random_num,
+    sleeve_id: random_num
   )
 end
 
