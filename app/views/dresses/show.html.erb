@@ -44,5 +44,8 @@
   <div class="showbuttons">
 
     <%= link_to "Back", dresses_path, class: 'btn btn-outline-success' %>
+    <%= link_to "Edit", edit_dress_path(@dress.id), class: 'btn btn-warning' %>
+    <%= link_to "Delete", dress_path(@dress.id), method: :delete, class: 'btn btn-danger' %>
+
   </div>
 </div>
