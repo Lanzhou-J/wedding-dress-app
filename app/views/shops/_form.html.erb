@@ -1,0 +1,37 @@
+<%= form_with model: @shop, local: true do |form| %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, placeholder: 'A new shop name', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :merchant_or_personal %>
+    <%= form.text_field :merchant_or_personal, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :location %>
+    <%= form.text_field :location, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :has_physical_store %>
+    <%= form.text_field :has_physical_store, class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= form.label :picture %>
+    <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+  </div>
+  
+  <div class="form-group col-md-6">
+    <%= form.submit class: 'btn btn-primary mb-2' %>
+  </div>
+
+<% end %>

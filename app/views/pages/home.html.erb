@@ -13,16 +13,24 @@
         </nav>
       </div>
     </header>
-
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
     <main role="main" class="inner cover">
       <h1 class="cover-heading">Wedding dress marketplace</h1>
       <p class="lead">Find your dream wedding dress.</p>
+      <% if user_signed_in? %>
+        <p class="lead"">
+          <%= button_to "Shop", dresses_path, method: :get, class: 'btn btn-lg btn-primary' %>
+        </p>      
+      <% else %>
         <p class="lead"">
           <%= button_to "Sign up", new_user_registration_path, method: :get, class: 'btn btn-lg btn-primary' %>
         </p>
         <p class = "lead">
           <%= button_to "Log in", new_user_session_path, method: :get, class: 'btn btn-lg btn-secondary' %>
         </p>
+      <% end %>
       <% if user_signed_in? %>
         <p class = "lead">
           <%= button_to "Log out", destroy_user_session_path, method: :delete, class: 'btn btn-lg btn-outline-danger' %>

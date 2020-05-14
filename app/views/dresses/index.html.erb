@@ -39,11 +39,21 @@
           <h1 class="jumbotron-heading">Wedding dress marketplace</h1>
           <p class="lead text-muted">Find your dream wedding dresses here.</p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            <a href="#" class="btn btn-primary my-2">My cart</a>
+            <a>
+              <% if current_user.shop == nil %>
+                <%= link_to 'Add new shop', new_shop_path, method: :get, class: 'btn btn-secondary my-2' %>
+              <% else %>
+                <%= link_to 'My shop', shop_path(current_user.shop), method: :get, class: 'btn btn-secondary my-2'%>
+              <% end %>
+            </a>
           </p>
         </div>
       </section>
+
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
 
       <div class="album py-5 bg-light">
         <div class="container">
