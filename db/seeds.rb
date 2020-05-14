@@ -103,4 +103,11 @@ dress = Dress.create(
   silhouette_id: 1,
   sleeve_id: 1
 )
+
+4.times do
+  dress = Dress.create(
+    name:
+  )
+end
+
 puts "Successfully seeded Dresses ✅"

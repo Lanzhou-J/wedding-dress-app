@@ -16,6 +16,19 @@ def users
       email: 'test3@gmail.com',
       password: 'password',
       username: 'person-Lan'
+    },
+
+    { 
+      email: 'test4@gmail.com',
+      password: 'password',
+      username: 'person-Amy'
+    },
+
+    { 
+      email: 'admin@gmail.com',
+      password: 'password',
+      username: 'person-admin',
+      is_admin: 'true'
     }
 
   ]
