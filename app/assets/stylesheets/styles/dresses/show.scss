@@ -1,0 +1,37 @@
+.dressshowbody {
+  padding-top: 5rem;
+  .show-content {
+  // height: calc(100vh - 100px);
+  // background-color: cornflowerblue;
+  .show-movie-attributes-wrapper {
+    // background-color: ivory;
+    display: flex;
+
+  //   .name {
+  //   margin-top: 10px;
+  //   margin-bottom: 10px;
+  //   }
+
+  //   .movie-attributes {
+  //   margin-top: 5px;
+  //   margin-bottom: 5px;
+  //   }
+
+    .showbuttons {
+    // background-color: pink;
+    width: 300px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    }
+  }
+
+  }
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+

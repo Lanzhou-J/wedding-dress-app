@@ -1,51 +1,80 @@
-<div class="show-content">
-  <div class="show-movie-attributes-wrapper">
-    <%= image_tag picture_for(@dress) , alt: "#{@dress.name} image", class: 'card-img-top img_fluid ml-2', style: 'width:40%;'%> 
-    <div class="col-md-8">
-      <h1 class = "name"><%= @dress.name %></h1>
-      <div class = "movie-attributes">
-        <strong>Price:  </strong>
-        <span><%= @dress.price %></span>
-      </div>
-      <div class = "movie-attributes">
-        <strong>Shipping cost:  </strong>
-        <span><%= @dress.shipping_cost %></span>
-      </div>
-      <div class = "movie-attributes">
-        <strong>Brand:  </strong>
-        <span><%= @dress.brand %></span>
-      </div>
-      <div class = "movie-attributes">
-        <strong>Size:  </strong>
-        <span><%= @dress.size.size %></span>
-      </div>
-      <div class = "movie-attributes">
-        <strong>Silhouette:  </strong>
-        <span><%= @dress.silhouette.style %></span>
-      </div>
-      <div class = "movie-attributes">
-        <strong>Length:  </strong>
-        <span><%= @dress.length.length %></span>
-      </div>
-      <div class = "movie-attributes">
-        <strong>Neckline:  </strong>
-        <span><%= @dress.neckline.style %></span>
-      </div>
-      <div class = "movie-attributes">
-        <strong>Sleeve:  </strong>
-        <span><%= @dress.sleeve.style %></span>
-      </div>
-      <div class = "movie-attributes">
-        <strong>Shop:  </strong>
-        <span><%= @dress.shop.name %></span>
+<body class="dressshowbody">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="show-content">
+    <div class="show-movie-attributes-wrapper">
+      <%= image_tag picture_for(@dress) , alt: "#{@dress.name} image", class: 'card-img-top img_fluid ml-2', style: 'width:40%;'%> 
+      <div class="col-md-8">
+        <h1 class = "name"><%= @dress.name %></h1>
+        <div class = "movie-attributes">
+          <strong>Price:  </strong>
+          <span><%= @dress.price %></span>
+        </div>
+        <div class = "movie-attributes">
+          <strong>Shipping cost:  </strong>
+          <span><%= @dress.shipping_cost %></span>
+        </div>
+        <div class = "movie-attributes">
+          <strong>Brand:  </strong>
+          <span><%= @dress.brand %></span>
+        </div>
+        <div class = "movie-attributes">
+          <strong>Size:  </strong>
+          <span><%= @dress.size.size %></span>
+        </div>
+        <div class = "movie-attributes">
+          <strong>Silhouette:  </strong>
+          <span><%= @dress.silhouette.style %></span>
+        </div>
+        <div class = "movie-attributes">
+          <strong>Length:  </strong>
+          <span><%= @dress.length.length %></span>
+        </div>
+        <div class = "movie-attributes">
+          <strong>Neckline:  </strong>
+          <span><%= @dress.neckline.style %></span>
+        </div>
+        <div class = "movie-attributes">
+          <strong>Sleeve:  </strong>
+          <span><%= @dress.sleeve.style %></span>
+        </div>
+        <div class = "movie-attributes">
+          <strong>Shop:  </strong>
+          <span><%= @dress.shop.name %></span>
+        </div>
+        <div class="showbuttons">
+          <%= link_to "Back", dresses_path, class: 'btn btn-outline-success' %>
+          <%= link_to "Edit", edit_dress_path(@dress.id), class: 'btn btn-warning' %>
+          <%= link_to "Delete", dress_path(@dress.id), method: :delete, class: 'btn btn-danger' %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="showbuttons">
-
-    <%= link_to "Back", dresses_path, class: 'btn btn-outline-success' %>
-    <%= link_to "Edit", edit_dress_path(@dress.id), class: 'btn btn-warning' %>
-    <%= link_to "Delete", dress_path(@dress.id), method: :delete, class: 'btn btn-danger' %>
 
   </div>
-</div>
+
+  <main role="main" class="container">
+  </main><!-- /.container -->
+</body>
