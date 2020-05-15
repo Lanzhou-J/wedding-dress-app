@@ -1,5 +1,6 @@
 class DressesController < ApplicationController
   before_action :find_dress, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
   def new
     @dress = Dress.new
   end
