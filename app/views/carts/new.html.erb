@@ -1,0 +1,12 @@
+<div class="new-cart-container">
+  <div class="new-cart">
+    <div class="added-game">
+      <h4>Added To Cart!</h4>
+      <h3><%= @dress.name %> </h3>
+    </div>
+    <div class='cart_games_buttons'>
+      <%= link_to "← Continue Shopping", dresses_path, class: 'cart-back-btn' %>
+      <%= link_to "Checkout →", carts_path, class: 'cart-go-btn' %>
+    </div>
+  </div>
+</div>

@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :shop
   has_one :cart
+
+  after_create :create_cart
+
+  private
+  def create_cart
+    cart = Cart.new(user: self)
+    cart.save
+  end
 end
