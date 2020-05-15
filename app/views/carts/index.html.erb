@@ -1,0 +1,24 @@
+<div class="cart-index-container">
+  <div class='shopping-cart'>
+    <h1>Your Cart</h1>
+    <hr class="cart-line">
+        <% @cart_dresses.each do |i| %>
+          <div class='cart-item'>
+              <span class='cart-game-title'><%= i.game.title %></span>
+              <span class='cart-game-price'><p><%= i.game.price_to_string %></p></span>
+              <span> <%= button_to cart_path(i), method: 'delete', class: "cart-delete-btn" do%></span>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+
+
+          </div>
+        <% end %>
+        <hr class="cart-line">
+      <div class='totals'>
+          <h3>Your Total: </h3>
+          
+          <h3 class='cart_price'><%= @price_string %></h3>
+      </div>
+      <div class="pay-btn"><%= render "shared/stripe_cart" %></div>
+  </div>
+</div>

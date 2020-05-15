@@ -65,6 +65,9 @@
           <strong>Shop:  </strong>
           <span><%= @dress.shop.name %></span>
         </div>
+          <% if user_signed_in? %>
+            <%= link_to 'ADD TO CART', new_cart_path(dress_id: @dress.id), class: 'add_to_cart_btn' %>
+          <% end %>
         <div class="showbuttons">
           <%= link_to "Back", dresses_path, class: 'btn btn-outline-success' %>
           <%= link_to "Edit", edit_dress_path(@dress.id), class: 'btn btn-warning' %>
