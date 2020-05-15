@@ -66,12 +66,17 @@
           <span><%= @dress.shop.name %></span>
         </div>
           <% if user_signed_in? %>
-            <%= link_to 'ADD TO CART', new_cart_path(dress_id: @dress.id), class: 'add_to_cart_btn' %>
+            <% unless can? :edit, @dress %>
+              <%= link_to 'ADD TO CART', new_cart_path(dress_id: @dress.id), class: 'btn btn-primary' %>
+            <% end %>
           <% end %>
         <div class="showbuttons">
+          <% if can? :edit, @dress %>
+            <%= link_to "Edit", edit_dress_path(@dress.id), class: 'btn btn-warning' %>
+            <%= link_to "Delete", dress_path(@dress.id), method: :delete, class: 'btn btn-danger' %>
+          
+          <% end %>
           <%= link_to "Back", dresses_path, class: 'btn btn-outline-success' %>
-          <%= link_to "Edit", edit_dress_path(@dress.id), class: 'btn btn-warning' %>
-          <%= link_to "Delete", dress_path(@dress.id), method: :delete, class: 'btn btn-danger' %>
         </div>
       </div>
     </div>

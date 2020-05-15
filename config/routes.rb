@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   resources :carts
   root to: "pages#home"
   get '/introduction', to: 'pages#introduction', as: 'introduction'
-  get '/contact', to: 'pages#contact', as: 'contact'
   get '/user' => 'dresses#index', :as => :user_root
 end
