@@ -4,9 +4,9 @@
       <div class="inner">
         <h3 class="masthead-brand">Beautiful in white</h3>
         <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link active" href="#">Home</a>
-          <a class="nav-link" href="#">Introduction</a>
-          <a class="nav-link" href="#">Contact</a>
+          <a><%= link_to 'Home', root_path, method: :get, class: 'nav-link active' %></a>
+          <a style="margin-left: 11px;"><%= link_to 'Introduction', introduction_path, method: :get, class: 'nav-link' %></a>
+          <a style="margin-left: 11px;"><%= link_to 'Contact', contact_path, method: :get, class: 'nav-link' %></a>
           <% if user_signed_in? %>
           <a style="margin-left: 11px;"><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link'%></a>
           <% end %>
@@ -21,7 +21,7 @@
       <p class="lead">Find your dream wedding dress.</p>
       <% if user_signed_in? %>
         <p class="lead"">
-          <%= button_to "Shop", dresses_path, method: :get, class: 'btn btn-lg btn-primary' %>
+          <%= button_to "Buy & Sell", dresses_path, method: :get, class: 'btn btn-lg btn-primary' %>
         </p>      
       <% else %>
         <p class="lead"">

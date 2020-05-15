@@ -39,7 +39,7 @@
           <h1 class="jumbotron-heading">Wedding dress marketplace</h1>
           <p class="lead text-muted">Find your dream wedding dresses here.</p>
           <p>
-            <a href="#" class="btn btn-primary my-2">My cart</a>
+            <%= link_to 'My cart', carts_path, method: :get, class: 'btn btn-primary my-2' %>
             <a>
               <% if current_user.shop == nil %>
                 <%= link_to 'Add new shop', new_shop_path, method: :get, class: 'btn btn-secondary my-2' %>

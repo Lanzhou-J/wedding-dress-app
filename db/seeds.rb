@@ -20,6 +20,7 @@ Silhouette.destroy_all
 Sleeve.destroy_all
 Length.destroy_all
 Neckline.destroy_all
+Cart.destroy_all
 
 puts "Seeding Users"
 
