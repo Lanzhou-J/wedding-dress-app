@@ -13,7 +13,7 @@ class CartsController < ApplicationController
   def destroy
     item = CartDress.find(params[:id])
     item.destroy unless item.nil?
-    redirect_to cart_index_path
+    redirect_to carts_path
   end
 
   def create

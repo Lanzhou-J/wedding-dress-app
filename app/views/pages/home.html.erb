@@ -17,7 +17,12 @@
     <% end %>
     <main role="main" class="inner cover">
       <h1 class="cover-heading">Wedding dress marketplace</h1>
-      <p class="lead">Find your dream wedding dress.</p>
+      <p class="lead"> 
+        <% if user_signed_in? %>
+          Welcome,
+          <%= current_user.username%>!
+        <% end %>
+        Find your dream wedding dress here.</p>
       <% if user_signed_in? %>
         <p class="lead"">
           <%= button_to "Buy & Sell", dresses_path, method: :get, class: 'btn btn-lg btn-primary' %>
