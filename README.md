@@ -10,15 +10,6 @@ https://beautiful-in-white.herokuapp.com/
 ### A link to the GitHub repository:
 https://github.com/Lanzhou-J/wedding-dress-app
 
-# User stories for my app
-- As a Bridal wedding dresses shop owner (merchant) or designer, I want to use this platform to display all my products including wedding dresses and accessories, and do business online. I also want to take orders and communicate with customers for designing custom wedding dresses.
-
-- As a customer, I want to use this platform to find wedding dresses that suit me and communicate with other brides, see their comments and ratings of a particular product.
-
-- As a bride who has already had the wedding, I would use the platform to sell preowned, used and second-hand wedding dresses.
-
-# An ERD for my app
-
 # Description of my marketplace app:
 
 ## Purpose
@@ -71,39 +62,51 @@ The target audience for the website are:
 3. Bridal shop owners
 
 ## Tech stack
-- HTML is used for the content of all 5 webpages (Homepage, Experience, Skills, Blog and Chinese homepage).
-- CSS is used to style and strucutre the webpages.
+- Ruby on Rails
+- HTML is used to structure the content of all the webpages.
+- Bootstrap and Scss is used to style the webpages.
+- Heroku is used to deploy the rails app.
 
-- JavaScript is used to achieve on scroll or on click effect in homepage and Blog webpage.
+# User stories for my app
+- As a Bridal wedding dresses shop owner (merchant) or designer, I want to use this platform to display all my products including wedding dresses and accessories, and do business online. I also want to take orders and communicate with customers for designing custom wedding dresses.
 
-- Netlify is used to deploy webpages.
+- As a customer, I want to use this platform to find wedding dresses that suit me and communicate with other brides, see their comments and ratings of a particular product.
 
-# Project Management
+- As a bride who has already had the wedding, I would use the platform to sell preowned, used and second-hand wedding dresses.
 
-## Wireframes
+# Wireframes:
 Wireframes were created for each page during the planning stage of the project. Wireframes are presented below. The tools that I used to create wireframes are Balsamic wireframes Desktop and Procreate app on ipad.
 
 ##### Homepage
-![wireframe_1](docs/Homepage_wireframe.png)
+![wireframe_1]()
 
-##### Experience
-![wireframe_2](docs/Work_Wireframe.png)
+##### Wedding dresses index page
+![wireframe_1]()
 
-##### Skill
-![wireframe_3](docs/Skill_Wireframe.png)
+# An ERD for my app
 
-#### Blog
-![wireframe_4](docs/Blog_Wireframe.png)
+# Explain the different high-level components (abstractions) in the app:
 
+# Third party services:
+
+# Describe my projects models in terms of the relationships they have with each other.
+
+# Discuss the database relations to be implemented:
+
+# Database schema design:
+
+# Project Management
 ## Trello
 
-Tasks were tracked using Trello. Trello board screenshots presented below:
+Tasks were allocated and tracked using Trello. Trello board screenshots presented below:
 
-##### 1/04/2020
-![trello_1](docs/trello/Trelloboard_20200401.png)
+##### 16/05/2020
+![trello_1](app/assets/images/docs/20200516Trelloboard.png)
 
-##### 2/04/2020
-![trello_2](./docs/trello/Trelloboardnew.png)
+##### 20/05/2020
+![trello_2]()
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
