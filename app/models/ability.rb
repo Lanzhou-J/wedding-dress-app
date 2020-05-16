@@ -5,9 +5,12 @@ class Ability
 
   def initialize(user)
     user||=User.new
-    can [:index, :show, :new, :create], Dress
+    can [:index, :show], Dress
+    can [:index, :show, :new, :create], Shop
     if user.shop != nil
+      can [:new, :create], Dress
       can [:edit, :update, :destroy], Dress, shop_id: user.shop.id
+      can [:edit, :update, :destroy], Shop, user_id: user.id
     end
   end
     # Define abilities for the passed in user here. For example:
