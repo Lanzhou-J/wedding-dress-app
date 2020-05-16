@@ -40,8 +40,8 @@ class ShopsController < ApplicationController
   end
 
   def destroy
-    # @shop.destroy
-    # redirect_to shops_path
+    @shop.destroy
+    redirect_to shops_path
   end
 
   private
