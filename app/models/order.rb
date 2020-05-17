@@ -15,7 +15,7 @@ class Order < ApplicationRecord
     key = ''
     20.times do |i|
       # put a dash every 5 characters except the first one.
-      key += '-' if (i%5).zero? && != 0
+      key += '-' if (i%5).zero? && i != 0
       key += chars.sample
     end
       # Set the orders dress key to this.
