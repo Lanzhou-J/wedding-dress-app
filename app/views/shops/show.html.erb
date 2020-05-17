@@ -24,6 +24,10 @@
           <%= image_tag 'celebration.svg', size: '30x30', class: 'navbarlogo'%>
           <strong><%= @shop.name %></strong>
         </a>
+          <p class="username">Current user: <%= current_user.username %></p>
+          <% if user_signed_in? %>
+            <a style="margin-left: 15px;"><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link'%></a>
+          <% end %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
