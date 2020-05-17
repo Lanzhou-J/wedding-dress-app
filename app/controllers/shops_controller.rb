@@ -22,9 +22,15 @@ class ShopsController < ApplicationController
   end
 
   def update
+    if @shop.update(shop_params)
+      redirect_to @shop
+    else
+      render :edit
+    end
   end
 
   def edit
+    # edit
   end
 
   def index
@@ -34,6 +40,8 @@ class ShopsController < ApplicationController
   end
 
   def destroy
+    @shop.destroy
+    redirect_to shops_path
   end
 
   private
