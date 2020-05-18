@@ -55,6 +55,12 @@
       </section>
       <div class="shoplist">
         <h2>Marketplace shop list</h2>
+          <div class="column">
+            <% @shops.each do |shop| %>
+              <%= render 'shopcard', shop: shop %>
+              <br>
+            <% end %>
+          </div>
       </div>
     </main>
   </body>
