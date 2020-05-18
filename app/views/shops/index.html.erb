@@ -1,1 +1,66 @@
-<h1>Shop index page</h1>
+   <body>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="#" class="text-white">Email us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <%= image_tag 'celebration.svg', size: '30x30', class: 'navbarlogo'%>
+            <strong>Wedding dresses</strong>
+          </a>
+          <p class="username">Current user: <%= current_user.username %></p>
+          <a style="margin-left: 15px;"><%= link_to 'Shops', shops_path, method: :get, class: 'nav-link navbarlink'%></a>
+          <% if user_signed_in? %>
+            <a style="margin-left: 15px;"><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link navbarlink'%></a>
+          <% end %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+          <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Wedding dress marketplace</h1>
+          <p class="lead text-muted">Find your dream wedding dresses here.</p>
+          <p>
+            <%= link_to 'My cart', carts_path, method: :get, class: 'btn btn-primary my-2' %>
+            <a>
+              <% if current_user.shop == nil %>
+                <%= link_to 'Add new shop', new_shop_path, method: :get, class: 'btn btn-secondary my-2' %>
+              <% else %>
+                <%= link_to 'My shop', shop_path(current_user.shop), method: :get, class: 'btn btn-secondary my-2'%>
+              <% end %>
+            </a>
+          </p>
+        </div>
+      </section>
+      <div class="shoplist">
+        <h2>Marketplace shop list</h2>
+          <div class="column">
+            <% @shops.each do |shop| %>
+              <%= render 'shopcard', shop: shop %>
+              <br>
+            <% end %>
+          </div>
+      </div>
+    </main>
+  </body>
