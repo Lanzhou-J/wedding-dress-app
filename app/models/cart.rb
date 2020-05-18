@@ -2,6 +2,7 @@
 class Cart < ApplicationRecord
   belongs_to :user
   has_many :cart_dresses, dependent: :destroy
+  has_many :dresses, through: :cart_dresses
 
   # Return the user that this cart belongs to
   def owner
