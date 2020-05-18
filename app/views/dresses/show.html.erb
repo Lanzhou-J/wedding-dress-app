@@ -24,76 +24,74 @@
     </div>
   </nav>
 
-  <div class="show-content">
-    <div class="show-movie-attributes-wrapper">
-      <%= image_tag picture_for(@dress) , alt: "#{@dress.name} image", class: 'card-img-top img_fluid ml-2', style: 'width:40%;'%> 
-      <div class="col-md-8">
-        <h1 class = "name"><%= @dress.name %></h1>
-        <div class = "movie-attributes">
-          <strong>Price:  </strong>
-          <span><%= @dress.price %></span>
-        </div>
-        <div class = "movie-attributes">
-          <strong>Shipping cost:  </strong>
-          <span><%= @dress.shipping_cost %></span>
-        </div>
-        <div class = "movie-attributes">
-          <strong>Brand:  </strong>
-          <span><%= @dress.brand %></span>
-        </div>
-        <div class = "movie-attributes">
-          <strong>Size:  </strong>
-          <span><%= @dress.size.size %></span>
-        </div>
-        <div class = "movie-attributes">
-          <strong>Silhouette:  </strong>
-          <span><%= @dress.silhouette.style %></span>
-        </div>
-        <div class = "movie-attributes">
-          <strong>Length:  </strong>
-          <span><%= @dress.length.length %></span>
-        </div>
-        <div class = "movie-attributes">
-          <strong>Neckline:  </strong>
-          <span><%= @dress.neckline.style %></span>
-        </div>
-        <div class = "movie-attributes">
-          <strong>Sleeve:  </strong>
-          <span><%= @dress.sleeve.style %></span>
-        </div>
-        <div class = "movie-attributes">
-          <strong>Shop:  </strong>
-          <span><%= @dress.shop.name %></span>
-        </div>
-        <div class = "movie-attributes">
-          <strong>Is sold?  </strong>
-          <span>
-            <%if @dress.is_sold %>
-              <%= "true" %>
-            <% else %>
-              <%= "false" %>
-            <% end %>
-          
-          </span>
-        </div>
-          <% if user_signed_in? %>
-            <% unless can? :edit, @dress %>
-              <%= link_to 'ADD TO CART', new_cart_path(dress_id: @dress.id), class: 'btn btn-primary' %>
-            <% end %>
+  <div class="show-content row content mt-3">
+    <div class="col-md-4">
+      <%= image_tag picture_for(@dress) , alt: "#{@dress.name} image", class: 'card-img-top img_fluid ml-2', style: 'width:100%;'%> 
+    </div>
+    <div class="col-md-8 showattributes">
+      <h2 class = "name"><%= @dress.name %></h2>
+      <div class = "movie-attributes">
+        <strong>Price:  </strong>
+        <span><%= "#{@dress.price/100} $" %></span>
+      </div>
+      <div class = "movie-attributes">
+        <strong>Shipping cost:  </strong>
+        <span><%= "#{@dress.shipping_cost/100} $" %></span>
+      </div>
+      <div class = "movie-attributes">
+        <strong>Brand:  </strong>
+        <span><%= @dress.brand %></span>
+      </div>
+      <div class = "movie-attributes">
+        <strong>Size:  </strong>
+        <span><%= @dress.size.size %></span>
+      </div>
+      <div class = "movie-attributes">
+        <strong>Silhouette:  </strong>
+        <span><%= @dress.silhouette.style %></span>
+      </div>
+      <div class = "movie-attributes">
+        <strong>Length:  </strong>
+        <span><%= @dress.length.length %></span>
+      </div>
+      <div class = "movie-attributes">
+        <strong>Neckline:  </strong>
+        <span><%= @dress.neckline.style %></span>
+      </div>
+      <div class = "movie-attributes">
+        <strong>Sleeve:  </strong>
+        <span><%= @dress.sleeve.style %></span>
+      </div>
+      <div class = "movie-attributes">
+        <strong>Shop:  </strong>
+        <span><%= @dress.shop.name %></span>
+      </div>
+      <div class = "movie-attributes">
+        <strong>Available or sold?  </strong>
+        <span>
+          <%if @dress.is_sold %>
+            <%= "Sold" %>
+          <% else %>
+            <%= "Available" %>
           <% end %>
-        <div class="showbuttons">
-          <% if can? :edit, @dress %>
-            <%= link_to "Edit", edit_dress_path(@dress.id), class: 'btn btn-warning' %>
-            <%= link_to "Delete", dress_path(@dress.id), method: :delete, class: 'btn btn-danger' %>
-          
+        </span>
+        <br>
+        <br>
+      </div>
+      <div class="showbuttons">
+        <% if user_signed_in? %>
+          <% unless can? :edit, @dress %>
+            <%= link_to 'ADD TO CART', new_cart_path(dress_id: @dress.id), class: 'btn btn-primary' %>
           <% end %>
-          <%= link_to "Back", dresses_path, class: 'btn btn-outline-success' %>
-        </div>
+        <% end %>
+        <% if can? :edit, @dress %>
+          <%= link_to "Edit", edit_dress_path(@dress.id), class: 'btn btn-warning' %>
+          <%= link_to "Delete", dress_path(@dress.id), method: :delete, class: 'btn btn-danger' %>
+        <% end %>
+        <%= link_to "Back", dresses_path, class: 'btn btn-outline-success' %>
       </div>
     </div>
-
   </div>
-
   <main role="main" class="container">
   </main><!-- /.container -->
 </body>
