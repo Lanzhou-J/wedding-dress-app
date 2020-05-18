@@ -84,7 +84,7 @@ Wireframes were created for each page during the planning stage of the project. 
 ![wireframe_1]()
 
 # An ERD for my app
-![erd](app/assets/images/docs/wedding_marketplace_erd.png)
+![erd](app/assets/images/docs/erd.png)
 
 # Explain the different high-level components (abstractions) in the app:
 
