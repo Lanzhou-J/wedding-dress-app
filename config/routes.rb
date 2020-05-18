@@ -9,9 +9,6 @@ Rails.application.routes.draw do
   get '/introduction', to: 'pages#introduction', as: 'introduction'
 
   get '/user' => 'dresses#index', :as => :user_root
-  get '/charges/new', to: 'charges#new', as: 'new_charge'
-  post '/buynow', to: 'charges#buy_now', as: 'buy_now'
-  post '/buycart', to: 'charges#buy_cart', as: 'buy_cart'
   get "/payments/session", to: "payments#get_stripe_id"
   get "/payments/success", to: "payments#success"
   post "/payments/webhook", to: "payments#webhook"
