@@ -31,7 +31,7 @@ https://github.com/Lanzhou-J/wedding-dress-app
 
 The website simply has all pages link to each other via the navigation bar. A sitemap for the website is presented below.
 
-![Sitemap]()
+![Sitemap](app/assets/images/docs/wedding_app_sitemap.png)
 
 ## Screenshots
 
@@ -84,6 +84,7 @@ Wireframes were created for each page during the planning stage of the project. 
 ![wireframe_1]()
 
 # An ERD for my app
+![erd](app/assets/images/docs/wedding_marketplace_erd.png)
 
 # Explain the different high-level components (abstractions) in the app:
 
