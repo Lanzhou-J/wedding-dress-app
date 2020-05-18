@@ -65,6 +65,17 @@
           <strong>Shop:  </strong>
           <span><%= @dress.shop.name %></span>
         </div>
+        <div class = "movie-attributes">
+          <strong>Is sold?  </strong>
+          <span>
+            <%if @dress.is_sold %>
+              <%= "true" %>
+            <% else %>
+              <%= "false" %>
+            <% end %>
+          
+          </span>
+        </div>
           <% if user_signed_in? %>
             <% unless can? :edit, @dress %>
               <%= link_to 'ADD TO CART', new_cart_path(dress_id: @dress.id), class: 'btn btn-primary' %>

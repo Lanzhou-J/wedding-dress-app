@@ -9,11 +9,14 @@ class PaymentsController < ApplicationController
   def webhook
     payment_id = params[:data][:object][:payment_intent]
     payment = Stripe::PaymentIntent.retrieve(payment_id)
-    dress_ids = payment.metadata.dress_ids.split(",")
+    puts "-"*20
+    pp payment
+    puts "-"*20
+    dress_ids = payment.metadata.listing_ids.split(",")
     dresses = []
     dress_ids.each do |id|
       dress = Dress.find(id)
-      dress.sold = true
+      dress.is_sold = true
       dress.save
     end
     user = User.find(payment.metadata.user_id)
