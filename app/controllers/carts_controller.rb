@@ -7,7 +7,7 @@ class CartsController < ApplicationController
 
   def new
     @dress = Dress.find(cart_params[:dress_id])
-    CartDress.create(cart: current_user.cart, dress: @dress)
+    CartDress.create(cart: current_user.carts.last, dress: @dress)
   end
 
   def destroy
@@ -37,7 +37,7 @@ class CartsController < ApplicationController
 
   # Loads all items from the Cart
   def load_cart
-    current_user.cart.cart_dresses.includes(:dress)
+    current_user.carts.last.cart_dresses.includes(:dress)
   end
 
   # Returns the total as a decimal with a '$'

@@ -2,7 +2,7 @@ class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:webhook]
 
   def success
-    @dresses = current_user.cart.dresses
+    @dresses = current_user.carts.last.dresses
     Cart.create(completed: false, user_id: current_user.id)
   end
 
@@ -17,7 +17,7 @@ class PaymentsController < ApplicationController
       dress.save
     end
     user = User.find(payment.metadata.user_id)
-    cart = user.cart
+    cart = user.carts.last
     cart.completed = true
     cart.save
     # need to void the cart
@@ -25,12 +25,12 @@ class PaymentsController < ApplicationController
   end
 
   def get_stripe_id
-    @dresses = current_user.cart.dresses
+    @dresses = current_user.carts.last.dresses
     line_items = @dresses.map do |dress|
       {
         name: dress.name,
         description: dress.description,
-        amount: dress.price,
+        amount: (dress.price+dress.shipping_cost),
         currency: 'aud',
         quantity: 1,
       }
