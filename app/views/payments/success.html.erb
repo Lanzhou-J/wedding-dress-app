@@ -1,0 +1,6 @@
+<div>
+  <% @dresses.each do |dress| %>
+    <h1>You successfully purchased <%= dress.name %></h1> 
+    <h3>You paid <%= number_to_currency(dress.price / 100) %></h3>
+  <% end %>
+</div>
