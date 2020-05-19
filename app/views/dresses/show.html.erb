@@ -81,7 +81,9 @@
       <div class="showbuttons">
         <% if user_signed_in? %>
           <% unless can? :edit, @dress %>
-            <%= link_to 'ADD TO CART', new_cart_path(dress_id: @dress.id), class: 'btn btn-primary' %>
+            <% if @dress.is_sold != true %>
+              <%= link_to 'ADD TO CART', new_cart_path(dress_id: @dress.id), class: 'btn btn-primary' %>
+            <% end %>
           <% end %>
         <% end %>
         <% if can? :edit, @dress %>

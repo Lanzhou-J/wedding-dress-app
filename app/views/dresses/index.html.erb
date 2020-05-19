@@ -51,6 +51,9 @@
                 <%= link_to 'My shop', shop_path(current_user.shop), method: :get, class: 'btn btn-secondary my-2'%>
               <% end %>
             </a>
+            <% if current_user.is_admin == true %>
+              <%= link_to 'Dashboard',rails_admin.dashboard_path, method: :get, class: 'btn btn-secondary my-2'%>
+            <% end %>
           </p>
         </div>
       </section>
@@ -58,9 +61,7 @@
       <% if flash[:notice] %>
         <p><%= flash[:notice] %></p>
       <% end %>
-      <% if current_user.is_admin == true %>
-        <%= link_to 'Dashboard',rails_admin.dashboard_path, method: :get, class: 'btn btn-secondary my-2'%>
-      <% end %>
+
       <div class="album py-5 bg-light">
         <div class="container">
 
