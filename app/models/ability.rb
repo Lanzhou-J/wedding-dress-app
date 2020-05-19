@@ -12,6 +12,10 @@ class Ability
       can [:edit, :update, :destroy], Dress, shop_id: user.shop.id
       can [:edit, :update, :destroy], Shop, user_id: user.id
     end
+    if user.is_admin == true
+      can [:index, :show, :new, :create, :edit, :update, :destroy], Dress
+      can [:index, :show, :new, :create, :edit, :update, :destroy], Shop
+    end
   end
     # Define abilities for the passed in user here. For example:
     #

@@ -15,6 +15,9 @@
         </div>
       </div>
     </div>
-    <div class="right"></div>
+    <div class="right">
+      <%= image_tag picture_for(shop.dresses.last) , alt: "#{shop.dresses.last.name} image", class: 'shopcard-image'%>
+      <%= image_tag picture_for(shop.dresses.second_to_last) , alt: "#{shop.dresses.second_to_last.name} image", class: 'shopcard-image' %>
+    </div>
   </div>
 </div>

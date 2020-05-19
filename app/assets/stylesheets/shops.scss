@@ -77,7 +77,9 @@
     }
     .right {
       width:45%;
-      background-color: pink;
+      // background-color: pink;
+      display: flex;
+      justify-content: space-evenly;
     }
   }
 }
@@ -86,4 +88,10 @@
 .custombutton {
   width: 80px;
   margin-top: 5px;
+}
+
+.shopcard-image {
+  width: 170px;
+  margin-top:2px;
+  margin-bottom: 2px;
 }
