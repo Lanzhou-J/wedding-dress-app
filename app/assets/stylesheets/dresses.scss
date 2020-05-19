@@ -1,3 +1,11 @@
 // Place all the styles related to the dresses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.dress-formcontainer {
+  display: flex;
+  justify-content: center;
+  .dress-formwrapper {
+    width:45%;
+  }
+}
