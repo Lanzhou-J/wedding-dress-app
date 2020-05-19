@@ -55,7 +55,7 @@
 
         <div class="row">
           <div class="row justify-content-around">
-            <% current_user.shop.dresses.each do |dress| %>
+            <% @shop.dresses.each do |dress| %>
               <%= render 'card', dress: dress %>
             <% end %>
           </div>
@@ -65,6 +65,9 @@
             <%= link_to "Delete", shop_path(@shop.id), method: :delete, class: 'btn btn-danger' %>
           <% end %>
           <%= link_to "Back", dresses_path, class: 'btn btn-outline-success' %>
+          <% if @shop.venue.address != nil %>
+            <%= link_to "Venue", venues_show_path(@shop.venue), class: 'btn btn-outline-secondary' %>
+          <% end %>
         </div>
         </div>
       </div>

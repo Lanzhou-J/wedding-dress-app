@@ -68,9 +68,9 @@ puts "Successfully seeded Sizes ✅"
 
 puts "-" * 20
 puts "Seeding Shops"
-shop = Shop.create(name: 'Obride Bridal House', opening_time: Date.today, merchant_or_personal: 'merchant')
+shop = Shop.create(name: 'Obride Bridal House', opening_time: Date.today, merchant_or_personal: 'merchant', user_id: 2, has_physical_store: true, location: '120 Spencer Street, Melbourne', description: 'A famous bridal shop')
 
-shop = Shop.create(name: 'Eternal Bridal', opening_time: Date.today, merchant_or_personal: 'merchant', user_id: 1)
+shop = Shop.create(name: 'Eternal Bridal', opening_time: Date.today, merchant_or_personal: 'merchant', has_physical_store: true, user_id: 1, location: '10 Stella Place, Bundoora, VIC',description: 'A good bridal shop')
 
 shop = Shop.create(name: "Lan's shop", opening_time: Date.today, merchant_or_personal: 'personal', user_id: 3)
 puts "Successfully seeded Shops ✅"
@@ -113,7 +113,7 @@ random_num = rand(1..5)
     shipping_cost:2000,
     color: 'white',
     texture: 'satin',
-    shop_id: rand(1..2),
+    shop_id: rand(1..3),
     size_id: random_num,
     length_id: random_num,
     neckline_id: random_num,

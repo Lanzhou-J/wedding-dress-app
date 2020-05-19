@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'venues/index'
-  get 'venues/show'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -16,6 +14,6 @@ Rails.application.routes.draw do
   get "/payments/success", to: "payments#success"
   post "/payments/webhook", to: "payments#webhook"
 
-  get '/venues', to: "venues#index"
-  get '/venues/:id', to: "venues#show"
+  get '/venues', to: "venues#index", as: 'venues'
+  get '/venues/:id', to: "venues#show", as: 'venues_show'
 end
