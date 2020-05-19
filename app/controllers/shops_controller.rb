@@ -50,7 +50,7 @@ class ShopsController < ApplicationController
 
   def shop_params
     params.require(:shop).permit(
-      :name, :merchant_or_personal, :location, :description, :has_physical_store
+      :name, :merchant_or_personal, :location, :description, :has_physical_store, :picture
     )
   end
 

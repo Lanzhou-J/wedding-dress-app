@@ -64,7 +64,7 @@
             <%= link_to "Edit", edit_shop_path(@shop.id), class: 'btn btn-warning' %>
             <%= link_to "Delete", shop_path(@shop.id), method: :delete, class: 'btn btn-danger' %>
           <% end %>
-          <%= link_to "Back", dresses_path, class: 'btn btn-outline-success' %>
+          <%= link_to "Back", shops_path, class: 'btn btn-outline-success' %>
           <% if @shop.venue.address != nil %>
             <%= link_to "Venue", venues_show_path(@shop.venue), class: 'btn btn-outline-secondary' %>
           <% end %>

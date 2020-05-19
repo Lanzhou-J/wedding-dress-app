@@ -1,17 +1,20 @@
 <div class="card-wrapper" id="card_wrapper">
-  <div class="card">
+  <div class="shopcard">
     <div class="left">
-      <div class="icon" id="MYOB"></div>
+      <div class="icon" id="MYOB"> <%= image_tag shoppicture_for(shop) , alt: "#{shop.name} image", class: 'card-img-top img_fluid card-picture' %></div>
     </div>
-    <div class="right">
+    <div class="middle">
       <div class="text">
         <div class="heading" id="heading">
             <h3 class="title" id="title"><%= shop.name %></h3>
-            <p class="card-text">Shop owner: <%= shop.user.username %></p>
-            <p class="company_time" id="graytext"><%= shop.name %></p>
-            <p class="duration_location" id="graytext"><%= shop.name %></p>
+            <div class="card-text">Shop owner: <%= shop.user.username %></div>
+            <div class="text">Shop type: <%= shop.merchant_or_personal %></div>
+            <div class="card-text">Open since: <%= shop.opening_time %></div>
+            <div class="card-text">Location: <%= shop.location %></div>
+            <%= link_to 'View', shop_path(shop), class: 'btn btn-primary custombutton' %>
         </div>
       </div>
     </div>
+    <div class="right"></div>
   </div>
 </div>
