@@ -53,8 +53,8 @@
           </p>
         </div>
       </section>
-      <div class="shoplist">
-        <h2>Marketplace shop list</h2>
+      <div class="shoplist shoplist-wrapper">
+        <h2 style="text-align:center">Marketplace shop list</h2>
           <div class="column">
             <% @shops.each do |shop| %>
               <%= render 'shopcard', shop: shop %>
