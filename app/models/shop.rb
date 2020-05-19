@@ -7,4 +7,14 @@ class Shop < ApplicationRecord
   enum merchant_or_personal: {merchant: 0, personal: 1}
 
   has_one_attached :picture
+  after_create :create_venue
+
+  has_one :venue
+  
+  private
+  def create_venue
+    venue = Venue.new(name: self.name, address: self.location, shop: self)
+    venue.save
+    p 'venue is created'
+  end
 end
