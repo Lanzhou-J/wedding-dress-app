@@ -4,7 +4,7 @@
       <div class="inner">
         <h3 class="masthead-brand">Beautiful in white</h3>
         <nav class="nav nav-masthead justify-content-center">
-          <a><%= link_to 'Home', root_path, method: :get, class: 'nav-link active' %></a>
+          <div><%= link_to 'Home', root_path, method: :get, class: 'nav-link active' %></div>
           <a style="margin-left: 15px;"><%= link_to 'Introduction', introduction_path, method: :get, class: 'nav-link' %></a>
           <% if user_signed_in? %>
           <a style="margin-left: 15px;"><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link'%></a>
