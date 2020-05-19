@@ -62,3 +62,5 @@ gem "cancancan", "~> 3.1"
 gem "stripe", "~> 5.22"
 
 gem "rails_admin", "~> 2.0"
+
+gem "geocoder", "~> 1.6"
