@@ -1,92 +1,106 @@
 # Beautiful in White - T2A2
 
-# Identification of the problem:
+# R7 - Identification of the problem:
+COVID-19 pandemic outbreak has deeply impacted weddings and the wedding related industry worldwide. The estimated revenue loss from COVID-19 of bridal stores industry in Australia is around $108.6 million in 2019-2020. [Bridal Stores in Australia - Market Research Report](https://www.ibisworld.com/au/industry/bridal-stores/4002/) According to news reports, the outbreak is also changing the way people seek and shop for wedding dresses. Couples that prepare to get married in the future have either postponed shopping or shopped for wedding dresses online. [Link](https://www.ibisworld.com/industry-insider/press-releases/called-off-covid-19-has-profoundly-impacted-weddings-and-events/) I want to create an online platform for bridal store owners across the world and for brides who are looking for dream wedding dresses.
 
-# Why is it a problem that needs solving:
+# R8 - Why is it a problem that needs solving:
+Many couples' weddings have been temporarily canceled/postponed because of COVID-19. Due to social distancing, some bridal stores are not able to continue to make a profit. However, in foreseeable future, the wedding industry will still 'thrive' post-pandemic.[Link](https://www.nbcnews.com/pop-culture/pop-culture-news/how-coronavirus-could-change-wedding-culture-even-after-pandemic-ends-n1185506) In order to help local bridal shops turn loss into gain during this period of time and help them increase customer reach in the coming future. I build this platform which enables them to display their products in their "virtual shops" and receive payments through Stripe. 
 
-### A link (URL) to my deployed app:
+On the other hand, it is often hard for customers to find affordable wedding dresses that suit their needs in traditional physical stores. According to business analysis, resale wedding dresses are becoming more and more popular among modern brides. Eco-conscious millennial brides tend to seek wedding dresses from a fast-growing industry selling secondhand wedding dresses/accessories at bargain prices. [Link](https://www.businessinsider.sg/millennial-brides-buy-secondhand-wedding-gowns-2019-7) The app provides customers with different choices (brand new products and second-hand products). Customers can also resell their preowned wedding dresses to recoup the cost. Afterall, "Why would you spend thousands of dollars on a dress that you wear for one day and then keep it in the closet for years when you can resell it online?”
+
+### R9 - A link (URL) to my deployed app:
 https://beautiful-in-white.herokuapp.com/
 
-### A link to the GitHub repository:
+### R10 - A link to the GitHub repository:
 https://github.com/Lanzhou-J/wedding-dress-app
 
-# Description of my marketplace app:
+# R11 - Description of my marketplace app:
 
 ## Purpose
+One of the purpose of the app is to help bridal shops across the world connect with new customers, make profits through e-commerce; Another purpose is for customers to find their dream wedding dresses and resell it to other customers if they want to.
 
 ## Functionality and features:
-### Functionality 1: Navigation Bar and Footer Bar
+### Functionality 1: Shopping cart
+Customers can add products (from different shops) to their carts or delete unwanted products from their carts. They can make payments via Stripe. After an item is sold, it will display "SOLD" on the show page and can not be added to a new cart. 
 
-### Functionality 2: Multilingual versions of homepage
+### Functionality 2: Add products to virtual shops
+Users can create a new shop if they want to sell things in the marketplace. They are able to edit shop information, Add a picture of the shop and add products(wedding dresses) to their virtual shops. A user can only manipulate products that belong to him or her. In order to make the process of adding products easier, I used dropdown lists for seller to select dress attributes such as Silhouette, Neckline, Length, Sleeve, Size etc.
 
-### Functionality 3: 
+### Functionality 3: Easy-to-use Admin dashboard
+Admins of the web app can either manipulate products/shops on the website directly or use an admin dashboard created by ruby gem RailsAdmin. By using the dash board, admins can manipulate records in the database, including Carts, Dresses, Shops, Users etc.
 
-### Feature 1: 
+### Feature 1: Display shop location on map
+By using Geocoding and Mapbox, the location of the shop will be displayed on a map if the address information of the shop is provided by the shop owner.
 
-### Feature 2: 
+### Feature 2: Landing page
+The website has a responsive Landing page that links to the introduction of the web app and Login/ Signup page. Only authenticated users are able to view/buy/sell products.
 
-### Feature 3: 
+### Feature 3: Display pictures of new products in the shop card
+
+In the shops index page, pictures of 2 newly-added products of the shop is displayed on the shop card, which makes a shop more attractive to customers and can also encourage shop owners to add new products to the shop.
 
 ## Sitemap
 
-The website simply has all pages link to each other via the navigation bar. A sitemap for the website is presented below.
+The website has pages link to each other via the navigation bar or "view"/"back" buttons. A sitemap for the website is presented below.
 
 ![Sitemap](app/assets/images/docs/wedding_app_sitemap.png)
 
 ## Screenshots
 
 ##### Home page
-![screenshot_home]()
+![screenshot_home](app/assets/images/docs/homepage.png)
 
-##### Login and Signup page
-![screenshot_login]()
+##### Login page
+![screenshot_login](app/assets/images/docs/login.png)
 
 ##### Wedding dresses index page
-![screenshot_index]()
+![screenshot_index](app/assets/images/docs/dressesindexpage.png)
 
 ##### Wedding dress show page
-![screenshot_index]()
+![screenshot_index](app/assets/images/docs/dressshowpage.png)
 
 ##### Shops index page
-![screenshot_shop]()
+![screenshot_shop](app/assets/images/docs/shopsindexpage.png)
 
 ##### Shop show page
-![screenshot_shop]()
+![screenshot_shop](app/assets/images/docs/shopshowpage.png)
 
 ## Target audience
 
 The target audience for the website are:
 
-1. Brides
-2. Wedding dress Designers
+1. Brides/couples planing for the wedding
+2. Wedding dress designers
 3. Bridal shop owners
+4. Brides who want to resell their wedding dresses
 
 ## Tech stack
 - Ruby on Rails
-- HTML is used to structure the content of all the webpages.
-- Bootstrap and Scss is used to style the webpages.
-- Heroku is used to deploy the rails app.
+- HTML
+- Bootstrap and Sass
+- RSpec
 
-# User stories for my app
-- As a Bridal wedding dresses shop owner (merchant) or designer, I want to use this platform to display all my products including wedding dresses and accessories, and do business online. I also want to take orders and communicate with customers for designing custom wedding dresses.
+# R12 - User stories for my app
+- As a Bridal wedding dresses shop owner (merchant) or designer, I want to use this platform to display all my products/designs of wedding dresses. I want to do business online and receive payments successfully. I also hope that the customers are able to find the location of my physical store so that they can pick up products if they want to or visit my shop in the future.
 
-- As a customer, I want to use this platform to find wedding dresses that suit me and communicate with other brides, see their comments and ratings of a particular product. I also want to add a product to a cart so that I can purchase multiple items at once.
+- As a customer, I want to use this platform to find wedding dresses that suit me. I also want to add a product to a cart so that I can purchase multiple items at once.
 
-- As a bride who has already had the wedding, I would use the platform to sell preowned, used and second-hand wedding dresses.
+- As a bride, I want to use the platform to sell preowned, second-hand wedding dresses after the wedding.
 
-# Wireframes:
-Wireframes were created for each page during the planning stage of the project. Wireframes are presented below. The tools that I used to create wireframes are Balsamic wireframes Desktop and Procreate app on ipad.
+- As an admin of the platform, I want to manage the data (e.g. users, dresses, shops) of the app on a easy-to-use dashboard.
 
-##### Homepage
-![wireframe_1]()
+# R13 - Wireframes:
+I used mobile first design priciple when designing the wireframes. Wireframes were created for each page during the planning stage of the project. Wireframes are presented below. The tools that I used to create wireframes are Balsamic wireframes Desktop and Procreate app on ipad.
 
-##### Wedding dresses index page
-![wireframe_1]()
+![wireframe_dresses](app/assets/images/docs/wedding.png)
 
-# An ERD for my app
+Shops index page
+![wireframe_shops](app/assets/images/docs/Shops.png)
+
+# R14 - An ERD for my app
 ![erd](app/assets/images/docs/erd.png)
 
-# Explain the different high-level components (abstractions) in the app (R15):
+# R15 - Explain the different high-level components (abstractions) in the app:
 
 ### Active Record:
   Active Record is one of the examples of a higher level component that is used in my app.
@@ -135,16 +149,17 @@ config.active_storage.service = :test
 ```
 In order to attach pictures to records, I used `has_one_attached` macro both in `models/dress.rb` and `models/shop.rb`. It sets up a one-to-one relationship between records and files uploaded. [RailsGuides](https://guides.rubyonrails.org/v5.2.0/active_storage_overview.html)
 
-# Third party services:
-- Heroku: deployment of the application.
-- Amazon S3: used to store image that are uploaded in production environment.
-- Stripe: payment solution.
-- Geocoding: a third party API, converting addresses into geographic coordinates.
-- Mapbox: present map for shops with address.
-- Devise: a gem used for authentication.
-- Cancancan: a gem used for authorization.
+# R16 - Third party services:
+- Heroku: It is used to deploy this application.
+- Amazon S3: S3 is for data storage that can be accessed via a url. In this app, it is used to store images that are uploaded (in production environment).
+- Stripe: It is used for making and receiving payments for users of the app. It handles PCI compliance for us.
+- Geocoding: A third party API used for converting addresses into geographic coordinates (longitude and latitude).
+- Mapbox: Used with Geocoding, use the longitude and latitude value of the address of a shop to show the location of it on a map.
+- Devise: A ruby gem used for user authentication.
+- Cancancan: A ruby gem used for user authorization.
+- RailsAdmin: A Rails engine that provides a clean interface for managing data that can be used by admins of the app.
 
-# Describe my projects models in terms of the relationships they have with each other.
+# R17 - Describe my projects models in terms of the relationships they have with each other.
 
 # Discuss the database relations to be implemented:
 

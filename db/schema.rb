@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_19_044032) do
+ActiveRecord::Schema.define(version: 2020_05_20_145131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2020_05_19_044032) do
     t.integer "price"
     t.text "description"
     t.boolean "is_sold"
-    t.boolean "is_preorder"
     t.string "color"
     t.string "texture"
     t.datetime "created_at", precision: 6, null: false
@@ -66,12 +65,12 @@ ActiveRecord::Schema.define(version: 2020_05_19_044032) do
     t.bigint "shop_id", null: false
     t.bigint "size_id", null: false
     t.bigint "silhouette_id", null: false
-    t.integer "inventory"
     t.bigint "neckline_id", null: false
     t.bigint "length_id", null: false
     t.bigint "sleeve_id", null: false
     t.string "name"
     t.integer "shipping_cost"
+    t.boolean "is_new"
     t.index ["length_id"], name: "index_dresses_on_length_id"
     t.index ["neckline_id"], name: "index_dresses_on_neckline_id"
     t.index ["shop_id"], name: "index_dresses_on_shop_id"
@@ -141,7 +140,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_044032) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.boolean "is_admin", default: false, null: false
+    t.boolean "is_admin"
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
