@@ -69,8 +69,8 @@ The website has pages link to each other via the navigation bar or "view"/"back"
 
 The target audience for the website are:
 
-1. Brides/couples that plan for the wedding
-2. Wedding dress Designers
+1. Brides/couples planing for the wedding
+2. Wedding dress designers
 3. Bridal shop owners
 4. Brides who want to resell their wedding dresses
 
@@ -92,11 +92,9 @@ The target audience for the website are:
 # R13 - Wireframes:
 I used mobile first design priciple when designing the wireframes. Wireframes were created for each page during the planning stage of the project. Wireframes are presented below. The tools that I used to create wireframes are Balsamic wireframes Desktop and Procreate app on ipad.
 
-##### Homepage
-![wireframe_homepage](app/assets/images/docs/Wedding_App_Home_Page.png)
+![wireframe_dresses](app/assets/images/docs/Weddingdresswireframe.png)
 
-##### Wedding dresses index page
-![wireframe_dresses](app/assets/images/docs/Wedding_App.png)
+![wireframe_shops](app/assets/images/docs/Shops.png)
 
 # R14 - An ERD for my app
 ![erd](app/assets/images/docs/erd.png)
