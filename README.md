@@ -14,7 +14,7 @@ https://beautiful-in-white.herokuapp.com/
 ### R10 - A link to the GitHub repository:
 https://github.com/Lanzhou-J/wedding-dress-app
 
-# Description of my marketplace app:
+# R11 - Description of my marketplace app:
 
 ## Purpose
 One of the purpose of the app is to help bridal shops across the world connect with new customers, make profits through e-commerce; Another purpose is for customers to find their dream wedding dresses and resell it to other customers if they want to.
@@ -24,7 +24,7 @@ One of the purpose of the app is to help bridal shops across the world connect w
 Customers can add products (from different shops) to their carts or delete unwanted products from their carts. They can make payments via Stripe. After an item is sold, it will display "SOLD" on the show page and can not be added to a new cart. 
 
 ### Functionality 2: Add products to virtual shops
-Users can create a new shop if they want to sell things in the marketplace. They are able to edit shop information, Add a picture of the shop and add products to their virtual shops. A user can only manipulate products that belong to him or her.
+Users can create a new shop if they want to sell things in the marketplace. They are able to edit shop information, Add a picture of the shop and add products(wedding dresses) to their virtual shops. A user can only manipulate products that belong to him or her. In order to make the process of adding products easier, I used dropdown lists for seller to select dress attributes such as Silhouette, Neckline, Length, Sleeve, Size etc.
 
 ### Functionality 3: Easy-to-use Admin dashboard
 Admins of the web app can either manipulate products/shops on the website directly or use an admin dashboard created by ruby gem RailsAdmin. By using the dash board, admins can manipulate records in the database, including Carts, Dresses, Shops, Users etc.
@@ -48,30 +48,31 @@ The website has pages link to each other via the navigation bar or "view"/"back"
 ## Screenshots
 
 ##### Home page
-![screenshot_home]()
+![screenshot_home](app/assets/images/docs/homepage.png)
 
-##### Login and Signup page
-![screenshot_login]()
+##### Login page
+![screenshot_login](app/assets/images/docs/login.png)
 
 ##### Wedding dresses index page
-![screenshot_index]()
+![screenshot_index](app/assets/images/docs/dressesindexpage.png)
 
 ##### Wedding dress show page
-![screenshot_index]()
+![screenshot_index](app/assets/images/docs/dressshowpage.png)
 
 ##### Shops index page
-![screenshot_shop]()
+![screenshot_shop](app/assets/images/docs/shopsindexpage.png)
 
 ##### Shop show page
-![screenshot_shop]()
+![screenshot_shop](app/assets/images/docs/shopshowpage.png)
 
 ## Target audience
 
 The target audience for the website are:
 
-1. Brides
+1. Brides/couples that plan for the wedding
 2. Wedding dress Designers
 3. Bridal shop owners
+4. Brides who want to resell their wedding dresses
 
 ## Tech stack
 - Ruby on Rails
@@ -79,25 +80,25 @@ The target audience for the website are:
 - Bootstrap and Sass
 - RSpec
 
-# User stories for my app
-- As a Bridal wedding dresses shop owner (merchant) or designer, I want to use this platform to display all my products/designs including wedding dresses and accessories, and do business, receiving payments online. I also want to communicate with customers for designing custom wedding dresses.
+# R12 - User stories for my app
+- As a Bridal wedding dresses shop owner (merchant) or designer, I want to use this platform to display all my products/designs of wedding dresses. I want to do business online and receive payments successfully. I also hope that the customers are able to find the location of my physical store so that they can pick up products if they want to or visit my shop in the future.
 
-- As a customer, I want to use this platform to find wedding dresses that suit me and communicate with other brides, see their comments and ratings of a particular product. I also want to add a product to a cart so that I can purchase multiple items at once.
+- As a customer, I want to use this platform to find wedding dresses that suit me. I also want to add a product to a cart so that I can purchase multiple items at once.
 
-- As a bride who has already had the wedding, I would use the platform to sell preowned, used and second-hand wedding dresses.
+- As a bride, I want to use the platform to sell preowned, second-hand wedding dresses after the wedding.
 
 - As an admin of the platform, I want to manage the data (e.g. users, dresses, shops) of the app on a easy-to-use dashboard.
 
-# Wireframes:
-Wireframes were created for each page during the planning stage of the project. Wireframes are presented below. The tools that I used to create wireframes are Balsamic wireframes Desktop and Procreate app on ipad.
+# R13 - Wireframes:
+I used mobile first design priciple when designing the wireframes. Wireframes were created for each page during the planning stage of the project. Wireframes are presented below. The tools that I used to create wireframes are Balsamic wireframes Desktop and Procreate app on ipad.
 
 ##### Homepage
-![wireframe_1]()
+![wireframe_homepage](app/assets/images/docs/Wedding_App_Home_Page.png)
 
 ##### Wedding dresses index page
-![wireframe_1]()
+![wireframe_dresses](app/assets/images/docs/Wedding_App.png)
 
-# An ERD for my app
+# R14 - An ERD for my app
 ![erd](app/assets/images/docs/erd.png)
 
 # R15 - Explain the different high-level components (abstractions) in the app:
