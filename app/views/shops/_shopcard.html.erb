@@ -1,7 +1,7 @@
 <div class="card-wrapper" id="card_wrapper">
   <div class="shopcard">
     <div class="left">
-      <div class="icon" id="MYOB"> </div>
+      <div class="icon" id="MYOB"> <%= image_tag shoppicture_for(shop) , alt: "#{shop.name} image", class: 'card-img-top img_fluid card-picture' %></div>
     </div>
     <div class="middle">
       <div class="text">
@@ -16,8 +16,12 @@
       </div>
     </div>
     <div class="right">
+    <% if shop.dresses.last != nil %>
       <%= image_tag picture_for(shop.dresses.last) , alt: "#{shop.dresses.last.name} image", class: 'shopcard-image'%>
+    <% end %>
+    <% if shop.dresses.second_to_last != nil %>
       <%= image_tag picture_for(shop.dresses.second_to_last) , alt: "#{shop.dresses.second_to_last.name} image", class: 'shopcard-image' %>
+    <% end %>
     </div>
   </div>
 </div>
