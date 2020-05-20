@@ -17,23 +17,31 @@ https://github.com/Lanzhou-J/wedding-dress-app
 # Description of my marketplace app:
 
 ## Purpose
+One of the purpose of the app is to help bridal shops across the world connect with new customers, make profits through e-commerce; Another purpose is for customers to find their dream wedding dresses and resell it to other customers if they want to.
 
 ## Functionality and features:
-### Functionality 1: Navigation Bar and Footer Bar
+### Functionality 1: Shopping cart
+Customers can add products (from different shops) to their carts or delete unwanted products from their carts. They can make payments via Stripe. After an item is sold, it will display "SOLD" on the show page and can not be added to a new cart. 
 
-### Functionality 2: Multilingual versions of homepage
+### Functionality 2: Add products to virtual shops
+Users can create a new shop if they want to sell things in the marketplace. They are able to edit shop information, Add a picture of the shop and add products to their virtual shops. A user can only manipulate products that belong to him or her.
 
-### Functionality 3: 
+### Functionality 3: Easy-to-use Admin dashboard
+Admins of the web app can either manipulate products/shops on the website directly or use an admin dashboard created by ruby gem RailsAdmin. By using the dash board, admins can manipulate records in the database, including Carts, Dresses, Shops, Users etc.
 
-### Feature 1: 
+### Feature 1: Display shop location on map
+By using Geocoding and Mapbox, the location of the shop will be displayed on a map if the address information of the shop is provided by the shop owner.
 
-### Feature 2: 
+### Feature 2: Landing page
+The website has a responsive Landing page that links to the introduction of the web app and Login/ Signup page. Only authenticated users are able to view/buy/sell products.
 
-### Feature 3: 
+### Feature 3: Display pictures of new products in the shop card
+
+In the shops index page, pictures of 2 newly-added products of the shop is displayed on the shop card, which makes a shop more attractive to customers and can also encourage shop owners to add new products to the shop.
 
 ## Sitemap
 
-The website simply has all pages link to each other via the navigation bar. A sitemap for the website is presented below.
+The website has pages link to each other via the navigation bar or "view"/"back" buttons. A sitemap for the website is presented below.
 
 ![Sitemap](app/assets/images/docs/wedding_app_sitemap.png)
 
@@ -67,9 +75,9 @@ The target audience for the website are:
 
 ## Tech stack
 - Ruby on Rails
-- HTML is used to structure the content of all the webpages.
-- Bootstrap and Scss is used to style the webpages.
-- Heroku is used to deploy the rails app.
+- HTML
+- Bootstrap and Sass
+- RSpec
 
 # User stories for my app
 - As a Bridal wedding dresses shop owner (merchant) or designer, I want to use this platform to display all my products/designs including wedding dresses and accessories, and do business, receiving payments online. I also want to communicate with customers for designing custom wedding dresses.
