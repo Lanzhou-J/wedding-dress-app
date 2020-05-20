@@ -1,13 +1,17 @@
 # Beautiful in White - T2A2
 
-# Identification of the problem:
+# R7 - Identification of the problem:
+COVID-19 pandemic outbreak has deeply impacted weddings and the wedding related industry worldwide. The estimated revenue loss from COVID-19 of bridal stores industry in Australia is around $108.6 million in 2019-2020. [Bridal Stores in Australia - Market Research Report](https://www.ibisworld.com/au/industry/bridal-stores/4002/) According to news reports, the outbreak is also changing the way people seek and shop for wedding dresses. Couples that prepare to get married in the future have either postponed shopping or shopped for wedding dresses online. [Link](https://www.ibisworld.com/industry-insider/press-releases/called-off-covid-19-has-profoundly-impacted-weddings-and-events/) I want to create an online platform for bridal store owners across the world and for brides who are looking for dream wedding dresses.
 
-# Why is it a problem that needs solving:
+# R8 - Why is it a problem that needs solving:
+Many couples' weddings have been temporarily canceled/postponed because of COVID-19. Due to social distancing, some bridal stores are not able to continue to make a profit. However, in foreseeable future, the wedding industry will still 'thrive' post-pandemic.[Link](https://www.nbcnews.com/pop-culture/pop-culture-news/how-coronavirus-could-change-wedding-culture-even-after-pandemic-ends-n1185506) In order to help local bridal shops turn loss into gain during this period of time and help them increase customer reach in the coming future. I build this platform which enables them to display their products in their "virtual shops" and receive payments through Stripe. 
 
-### A link (URL) to my deployed app:
+On the other hand, it is often hard for customers to find affordable wedding dresses that suit their needs in traditional physical stores. According to business analysis, resale wedding dresses are becoming more and more popular among modern brides. Eco-conscious millennial brides tend to seek wedding dresses from a fast-growing industry selling secondhand wedding dresses/accessories at bargain prices. [Link](https://www.businessinsider.sg/millennial-brides-buy-secondhand-wedding-gowns-2019-7) The app provides customers with different choices (brand new products and second-hand products). Customers can also resell their preowned wedding dresses to recoup the cost. Afterall, "Why would you spend thousands of dollars on a dress that you wear for one day and then keep it in the closet for years when you can resell it online?”
+
+### R9 - A link (URL) to my deployed app:
 https://beautiful-in-white.herokuapp.com/
 
-### A link to the GitHub repository:
+### R10 - A link to the GitHub repository:
 https://github.com/Lanzhou-J/wedding-dress-app
 
 # Description of my marketplace app:
@@ -68,11 +72,13 @@ The target audience for the website are:
 - Heroku is used to deploy the rails app.
 
 # User stories for my app
-- As a Bridal wedding dresses shop owner (merchant) or designer, I want to use this platform to display all my products including wedding dresses and accessories, and do business online. I also want to take orders and communicate with customers for designing custom wedding dresses.
+- As a Bridal wedding dresses shop owner (merchant) or designer, I want to use this platform to display all my products/designs including wedding dresses and accessories, and do business, receiving payments online. I also want to communicate with customers for designing custom wedding dresses.
 
 - As a customer, I want to use this platform to find wedding dresses that suit me and communicate with other brides, see their comments and ratings of a particular product. I also want to add a product to a cart so that I can purchase multiple items at once.
 
 - As a bride who has already had the wedding, I would use the platform to sell preowned, used and second-hand wedding dresses.
+
+- As an admin of the platform, I want to manage the data (e.g. users, dresses, shops) of the app on a easy-to-use dashboard.
 
 # Wireframes:
 Wireframes were created for each page during the planning stage of the project. Wireframes are presented below. The tools that I used to create wireframes are Balsamic wireframes Desktop and Procreate app on ipad.
@@ -86,7 +92,7 @@ Wireframes were created for each page during the planning stage of the project. 
 # An ERD for my app
 ![erd](app/assets/images/docs/erd.png)
 
-# Explain the different high-level components (abstractions) in the app (R15):
+# R15 - Explain the different high-level components (abstractions) in the app:
 
 ### Active Record:
   Active Record is one of the examples of a higher level component that is used in my app.
@@ -135,7 +141,7 @@ config.active_storage.service = :test
 ```
 In order to attach pictures to records, I used `has_one_attached` macro both in `models/dress.rb` and `models/shop.rb`. It sets up a one-to-one relationship between records and files uploaded. [RailsGuides](https://guides.rubyonrails.org/v5.2.0/active_storage_overview.html)
 
-# Third party services:
+# R16 - Third party services:
 - Heroku: It is used to deploy this application.
 - Amazon S3: S3 is for data storage that can be accessed via a url. In this app, it is used to store images that are uploaded (in production environment).
 - Stripe: It is used for making and receiving payments for users of the app. It handles PCI compliance for us.
@@ -145,7 +151,7 @@ In order to attach pictures to records, I used `has_one_attached` macro both in 
 - Cancancan: A ruby gem used for user authorization.
 - RailsAdmin: A Rails engine that provides a clean interface for managing data that can be used by admins of the app.
 
-# Describe my projects models in terms of the relationships they have with each other.
+# R17 - Describe my projects models in terms of the relationships they have with each other.
 
 # Discuss the database relations to be implemented:
 
