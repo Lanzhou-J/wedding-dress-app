@@ -94,6 +94,7 @@ I used mobile first design priciple when designing the wireframes. Wireframes we
 
 ![wireframe_dresses](app/assets/images/docs/wedding.png)
 
+Shops index page
 ![wireframe_shops](app/assets/images/docs/Shops.png)
 
 # R14 - An ERD for my app

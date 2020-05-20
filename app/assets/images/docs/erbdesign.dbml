@@ -1,0 +1,80 @@
+table users {
+  id int [pk]
+  email varchar
+  password varchar 
+  username varchar
+  is_admin boolean
+}
+
+table shops {
+  id int [pk]
+  name string
+  merchant_or_personal integer
+  location string
+  description text
+  opening_time date
+  has_physical_store boolean
+  user_id int [ref: - users.id]
+}
+
+table dresses {
+  id int [pk]
+  brand string
+  price integer
+  shiping_cost integer
+  description text
+  is_sold boolean
+  is_new boolean
+  colour string
+  texture string
+  shop_id int [ref: > shops.id]
+  size_id int [ref: > sizes.id]
+  length int [ref: > lengths.id]
+  silhouette int [ref: > silhouettes.id]
+  neckline int [ref: > necklines.id]
+  sleeve int [ref: > sleeves.id]
+}
+
+table sizes {
+  id int [pk]
+  size integer
+}
+
+table silhouettes {
+  id int [pk]
+  style varchar
+}
+
+table lengths {
+  id int [pk]
+  length varchar
+}
+
+table necklines {
+  id int [pk]
+  style varchar
+}
+
+table sleeves {
+  id int [pk]
+  style varchar
+}
+
+table carts {
+  id int [pk]
+  completed boolean
+  user_id int [ref: > users.id]
+}
+
+table cart_dresses {
+  cart_id int [ref: > carts.id]
+  dress_id int [ref: > dresses.id]
+}
+
+table venues {
+  name string
+  address string
+  longitude float
+  latitude float
+  shop_id int [ref: - shops.id]
+}
