@@ -92,7 +92,7 @@ The target audience for the website are:
 # R13 - Wireframes:
 I used mobile first design priciple when designing the wireframes. Wireframes were created for each page during the planning stage of the project. Wireframes are presented below. The tools that I used to create wireframes are Balsamic wireframes Desktop and Procreate app on ipad.
 
-![wireframe_dresses](app/assets/images/docs/Weddingdresswireframe.png)
+![wireframe_dresses](app/assets/images/docs/wedding.png)
 
 ![wireframe_shops](app/assets/images/docs/Shops.png)
 
