@@ -136,13 +136,14 @@ config.active_storage.service = :test
 In order to attach pictures to records, I used `has_one_attached` macro both in `models/dress.rb` and `models/shop.rb`. It sets up a one-to-one relationship between records and files uploaded. [RailsGuides](https://guides.rubyonrails.org/v5.2.0/active_storage_overview.html)
 
 # Third party services:
-- Heroku: deployment of the application.
-- Amazon S3: used to store image that are uploaded in production environment.
-- Stripe: payment solution.
-- Geocoding: a third party API, converting addresses into geographic coordinates.
-- Mapbox: present map for shops with address.
-- Devise: a gem used for authentication.
-- Cancancan: a gem used for authorization.
+- Heroku: It is used to deploy this application.
+- Amazon S3: S3 is for data storage that can be accessed via a url. In this app, it is used to store images that are uploaded (in production environment).
+- Stripe: It is used for making and receiving payments for users of the app. It handles PCI compliance for us.
+- Geocoding: A third party API used for converting addresses into geographic coordinates (longitude and latitude).
+- Mapbox: Used with Geocoding, use the longitude and latitude value of the address of a shop to show the location of it on a map.
+- Devise: A ruby gem used for user authentication.
+- Cancancan: A ruby gem used for user authorization.
+- RailsAdmin: A Rails engine that provides a clean interface for managing data that can be used by admins of the app.
 
 # Describe my projects models in terms of the relationships they have with each other.
 
