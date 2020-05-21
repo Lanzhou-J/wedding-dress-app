@@ -27,7 +27,8 @@ class CartsController < ApplicationController
   def cart_total
     sum = 0
     @cart_dresses.each do |item|
-      sum += item.dress.price
+      item_total_price = item.dress.price + item.dress.shipping_cost
+      sum += item_total_price
     end
     sum
   end
