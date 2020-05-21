@@ -158,8 +158,44 @@ In order to attach pictures to records, I used `has_one_attached` macro both in 
 - Devise: A ruby gem used for user authentication.
 - Cancancan: A ruby gem used for user authorization.
 - RailsAdmin: A Rails engine that provides a clean interface for managing data that can be used by admins of the app.
+- PostgreSQL: I used this free relational database to store/manage records for the app.
 
 # R17 - Describe my projects models in terms of the relationships they have with each other.
+### Users
+- has many carts
+- has one shop
+
+Once a user sign up to the website, his or her first cart will be created at the same time. If a user is a seller, he/she can choose to create a shop (and that shop belongs to him/her)
+### Shops
+- has many dresses
+- belongs to user
+- has one venue
+- has one picture attached
+### Venues
+- belongs to shop
+
+A shop belongs to a user, it has a venue that is related to the location attribute of the shop. A shop has many dresses so shop owner can list products in the shop show page. A shop has one attached picture to attract more customers.
+
+### Dresses
+- belongs to shop
+- belongs to size
+- belongs to length
+- belongs to neckline
+- belongs to silhouette
+- belongs to sleeve
+- has one picture attached
+### Silhouettes
+- has many dresses
+### Sizes
+- has many dresses
+### Sleeves
+- has many dresses
+### Necklines
+- has many dresses
+### Lengths
+- has many dresses
+
+A dress belongs to a shop, it has one product picture attached. A wedding dress has many attributes, in order to make it easier for sellers to create a new dress I used dropdown select field for Silhoettes/Sizes/Sleeves/Necklines and Lengths. A silhouette/sleeve/neckline/length style has many dresses. Similarly, a size has many dresses.
 
 # Discuss the database relations to be implemented:
 
@@ -177,27 +213,8 @@ Tasks were allocated and tracked using Trello. Trello board screenshots presente
 ![trello_2]()
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# This action returns all of the listing records and sends them to the index view
+##### This action returns all of the listing records and sends them to the index view
