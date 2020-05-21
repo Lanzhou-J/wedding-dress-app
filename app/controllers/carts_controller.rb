@@ -20,8 +20,8 @@ class CartsController < ApplicationController
   end
 
   private
-  
-  #Parameters that are allowed to be sent through
+
+  # Parameters that are allowed to be sent through
   def cart_params
     params.permit(:dress_id)
   end

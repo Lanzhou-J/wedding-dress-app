@@ -9,6 +9,7 @@ class User < ApplicationRecord
   after_create :create_cart
 
   private
+
   def create_cart
     cart = Cart.new(user: self)
     cart.save

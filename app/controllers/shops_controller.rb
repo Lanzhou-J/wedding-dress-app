@@ -18,7 +18,7 @@ class ShopsController < ApplicationController
       redirect_to @shop
     end
   end
-  
+
   def index
   end
 
@@ -56,5 +56,5 @@ class ShopsController < ApplicationController
 
   def find_shop
     @shop = Shop.find(params[:id])
-  end 
+  end
 end

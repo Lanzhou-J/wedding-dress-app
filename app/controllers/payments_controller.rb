@@ -33,11 +33,11 @@ class PaymentsController < ApplicationController
       {
         name: dress.name,
         description: dress.description,
-        amount: (dress.price+dress.shipping_cost),
+        amount: (dress.price + dress.shipping_cost),
         currency: 'aud',
         quantity: 1,
       }
-    end 
+    end
     dress_ids = @dresses.pluck(:id).join(",")
     session_id = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -52,6 +52,6 @@ class PaymentsController < ApplicationController
       success_url: "#{root_url}payments/success?userId=#{current_user.id}&listingIds=#{dress_ids}",
       cancel_url: "#{root_url}listings"
     ).id
-    render :json => {id: session_id, stripe_public_key: Rails.application.credentials.dig(:stripe, :public_key)}
+    render :json => { id: session_id, stripe_public_key: Rails.application.credentials.dig(:stripe, :public_key) }
   end
 end

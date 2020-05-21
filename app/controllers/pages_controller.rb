@@ -8,7 +8,6 @@ class PagesController < ApplicationController
   end
 
   def introduction
-    #introduction
+    # introduction
   end
-
 end

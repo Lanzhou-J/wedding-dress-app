@@ -4,7 +4,7 @@ class Dress < ApplicationRecord
   validates :color, presence: true
   validates :texture, presence: true
   validates :shipping_cost, presence: true
-  
+
   belongs_to :shop
   belongs_to :size
   belongs_to :length
