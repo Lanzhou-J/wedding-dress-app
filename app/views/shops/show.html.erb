@@ -6,6 +6,7 @@
           <div class="col-sm-8 col-md-7 py-4">
             <h4 class="text-white">About</h4>
             <p class="text-muted"><%= @shop.description %></p>
+            <p style="color:gray"><%= "Shop type: #{@shop.merchant_or_personal}" %></p>
           </div>
           <div class="col-sm-4 offset-md-1 py-4">
             <h4 class="text-white">Contact</h4>
@@ -42,7 +43,8 @@
       <div class="container shopheading">
         <h1 class="jumbotron-heading">Wedding dress marketplace</h1>
         <p class="lead text-muted">Find your dream wedding dresses here.</p>
-        <p><%= @shop.description %></p>
+        <p style="color:gray"><%= @shop.description %></p>
+
       </div>
     </section>
 
