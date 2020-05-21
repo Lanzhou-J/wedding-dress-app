@@ -6,13 +6,13 @@ https://beautiful-in-white.herokuapp.com/
 https://github.com/Lanzhou-J/wedding-dress-app
 
 ### Testing accounts
-\# | Account Type | Username | Email | Password  
---- | --- | --- | --- | ---
-1 | User |  shop1 | test1@gmail.com | password
-2 | User | shop2 | test2@gmail.com | password
-3 | User | person-Lan | test3@gmail.com | password
-4 | User | person-Amy | test4@gmail.com | password
-5 | Admin | person-admin | admin@gmail.com | password 
+\# | Account Type | Username | Email | Password | feature
+--- | --- | --- | --- | --- | ---
+1 | User |  shop1 | test1@gmail.com | password | shop owner
+2 | User | shop2 | test2@gmail.com | password | shop owner
+3 | User | person-Lan | test3@gmail.com | password | personal shop owner
+4 | User | person-Amy | test4@gmail.com | password | user without a shop
+5 | Admin | person-admin | admin@gmail.com | password | admin
 
 ## R7 - Identification of the problem:
 COVID-19 pandemic outbreak has deeply impacted weddings and the wedding related industry worldwide. The estimated revenue loss from COVID-19 of bridal stores industry in Australia is around $108.6 million in 2019-2020. [Bridal Stores in Australia - Market Research Report](https://www.ibisworld.com/au/industry/bridal-stores/4002/) According to news reports, the outbreak is also changing the way people seek and shop for wedding dresses. Couples that prepare to get married in the future have either postponed shopping or shopped for wedding dresses online. [Link](https://www.ibisworld.com/industry-insider/press-releases/called-off-covid-19-has-profoundly-impacted-weddings-and-events/) I want to create an online platform for bridal store owners across the world and for brides who are looking for dream wedding dresses.
@@ -67,11 +67,17 @@ The website has pages link to each other via the navigation bar or "view"/"back"
 ##### Wedding dress show page
 ![screenshot_index](app/assets/images/docs/dressshowpage.png)
 
+##### Wedding dress new page
+![screenshot_index](app/assets/images/docs/newdress.png)
+
 ##### Shops index page
 ![screenshot_shop](app/assets/images/docs/shopsindexpage.png)
 
 ##### Shop show page
 ![screenshot_shop](app/assets/images/docs/shopshowpage.png)
+
+##### Shop venue page
+![screenshot_venue](app/assets/images/docs/Venueshow.png)
 
 ### Target audience
 
@@ -213,6 +219,8 @@ A dress belongs to a shop, it has one product picture attached. A wedding dress 
 In my application I used 11 tables in my ERD. The relationships between the tables include one-to-one(e.g. user & shop), one-to-many(e.g. shop & dresses, user & carts), and many-to-many (carts & dresses). As you can see in ERD, the tables that have relationships are connected with each other(via foreign key or join table). By using these database relations, I achieved CRUD functions for shops/dresses and can create carts for each user and allow them to add many items to the last cart(not completed/paid cart). 
 
 For creating a wedding dress record, I use tables such as sizes/lengths/silhouettes/necklines/sleeves, these tables and dress have an "one-to-many" relationship, for example, a silhouette style "Mermaid" can have many dresses, while a dress can only have one silhouette style. These tables make it easier for shop owners to create a new dress using dropdown lists in the form. These relationships are achieved through the use of foreign keys (a foreign key can reference another table), for example, in the dress table there are "size_id", "neckline_id", "silhoette_id", or "shop_id" etc.
+
+In controllers, I minimised all the database calls needed for performing an action using `.includes()`.
 
 ## R19 - Database schema design:
 I designed the database ERD using dbdiagram.io, the DBML text is put in db directory. `db/dbdiagram.dbml`
