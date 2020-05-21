@@ -1,15 +1,19 @@
 class ShopsController < ApplicationController
+  # Authenticate user before all the actions
   before_action :authenticate_user!
+  # Before edit/show or delete a shop, find the shop using id from params
   before_action :find_shop, only: [:show, :edit, :update, :destroy]
   def new
-    @shop = Shop.new
+    # new
   end
 
   def create
+    # This action can create a new shop record with valid attribute
     @shop = Shop.new(shop_params)
+    # Set the user of the shop as the current user
     @shop.user = current_user
     @shop.opening_time = Date.today
-
+    # After the record is created and saved, redirect to the shop show page
     if @shop.errors.any?
       render :new
     else
@@ -20,6 +24,7 @@ class ShopsController < ApplicationController
   end
 
   def update
+   # This action can update information with edited shop info and redirect to shop show page
     if @shop.update(shop_params)
       redirect_to @shop
     else
@@ -32,13 +37,16 @@ class ShopsController < ApplicationController
   end
 
   def index
+    # This action returns all of the shops records and sends them to index view
     @shops = Shop.all
   end
 
   def show
+    # show
   end
 
   def destroy
+    # This action can destroy a shop record and redirect to the index page
     @shop.destroy
     redirect_to shops_path
   end

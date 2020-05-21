@@ -1,4 +1,4 @@
-# CartDresses are used to populate the Cart and store dress items 
+# CartDresses are used to populate the Cart and store dress items
 # until the customer decides to purchase them.
 class CartDress < ApplicationRecord
   belongs_to :cart

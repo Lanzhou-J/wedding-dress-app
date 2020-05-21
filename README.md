@@ -206,6 +206,9 @@ A shop belongs to a user, it has a venue that is related to the location attribu
 A dress belongs to a shop, it has one product picture attached. A wedding dress has many attributes, in order to make it easier for sellers to create a new dress I used dropdown select field for Silhoettes/Sizes/Sleeves/Necklines and Lengths. A silhouette/sleeve/neckline/length style has many dresses. Similarly, a size has many dresses.
 
 ## R18 - Discuss the database relations to be implemented:
+In my application I used 11 tables in my ERD. The relationships between the tables include one-to-one(e.g. user & shop), one-to-many(e.g. shop & dresses, user & carts), and many-to-many (carts & dresses). By using these database relations, I achieved CRUD functions for shops/dresses and can create carts for each user and allow them to add many items to the last cart(not completed/paid cart). 
+
+For creating a wedding dress record, I use tables such as sizes/lengths/silhouettes/necklines/sleeves, these tables and dress have an "one-to-many" relationship, for example, a silhouette style "Mermaid" can have many dresses, while a dress can only have one silhouette style. These tables make it easier for shop owners to create a new dress using dropdown lists in the form. These relationships are achieved through the use of foreign keys, for example, in the dress table there are "size_id", "neckline_id", "silhoette_id", or "shop_id" etc.
 
 ## R19 - Database schema design:
 I designed the database ERD using dbdiagram.io, the DBML text is put in db directory. `db/dbdiagram.dbml`
