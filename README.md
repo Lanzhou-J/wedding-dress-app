@@ -218,6 +218,7 @@ The schema design is self-explanatory, please see ERD provided in R14.
 
 ## R20 - Project Management
 ### Trello
+Planning stage: Do research on bridal store industry -- study the structure of other 2-sided marketplace websites -- create ERD -- write user stories -- design wireframes (for mobile and desktop).
 
 Tasks were allocated and tracked using Trello. Trello board screenshots presented below:
 
