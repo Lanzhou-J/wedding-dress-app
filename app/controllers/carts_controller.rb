@@ -24,6 +24,7 @@ class CartsController < ApplicationController
   end
 
   # Total cost of all items in the cart
+  # Total cost includes the price of wedding dresses and shipping cost
   def cart_total
     sum = 0
     @cart_dresses.each do |item|

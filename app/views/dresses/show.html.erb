@@ -63,8 +63,16 @@
         <span><%= @dress.sleeve.style %></span>
       </div>
       <div class = "movie-attributes">
+        <strong>New or preowned:  </strong>
+        <span><%= @dress.new_or_preowned %></span>
+      </div>
+      <div class = "movie-attributes">
         <strong>Shop:  </strong>
         <span><%= @dress.shop.name %></span>
+      </div>
+      <div class = "movie-attributes">
+        <strong>Description:  </strong>
+        <span><%= @dress.description %></span>
       </div>
       <div class = "movie-attributes">
         <strong>Available or sold?  </strong>
@@ -78,6 +86,7 @@
         <br>
         <br>
       </div>
+
       <div class="showbuttons">
         <% if user_signed_in? %>
           <% unless can? :edit, @dress %>

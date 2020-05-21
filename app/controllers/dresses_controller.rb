@@ -12,6 +12,10 @@ class DressesController < ApplicationController
     # This action can create a new dress record with valid attributes
     # After the record is created and saved, redirect to the dress show page
     @dress = Dress.new(dress_params)
+    @dress.shop = current_user.shop
+    p '*'*20
+    p dress_params
+    p '*'*20
 
     if @dress.errors.any?
       render :new
@@ -57,7 +61,7 @@ class DressesController < ApplicationController
       :name, :brand, :rating, :price,
       :description, :is_sold, :is_preorder, :color, :texture, :shop_id,
       :size_id, :length_id, :sleeve_id, :neckline_id,
-      :silhouette_id, :shipping_cost, :picture
+      :silhouette_id, :shipping_cost, :picture, :new_or_preowned, :description
     )
   end
 

@@ -26,13 +26,13 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :texture %>
-    <%= form.text_field :texture, class: 'form-control' %>
+    <%= form.label :new_or_preowned %>
+    <%= form.text_field :new_or_preowned, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label :shop_id %>
-    <%= form.collection_select(:shop_id, Shop.all, :id, :name, class: 'form-control') %>
+    <%= form.label :texture %>
+    <%= form.text_field :texture, class: 'form-control' %>
   </div>
 
   <div class="form-group">
@@ -58,6 +58,10 @@
   <div class="form-group">
     <%= form.label :sleeve_id %>
     <%= form.collection_select(:sleeve_id, Sleeve.all, :id, :style, class: 'form-control') %>
+  </div>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: 'form-control' %>
   </div>
   
   <div class="form-group">
