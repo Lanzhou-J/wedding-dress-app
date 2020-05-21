@@ -8,6 +8,7 @@
     </button>
 
   </nav>
+  <div style="margin:0 15px 0 15px">
 <h1>Venues Show</h1>
 <h3>Name: <%= @venue.name %></h3>
 <h3>Address: <%= @venue.address %></h3>
@@ -16,4 +17,5 @@
 <%= javascript_pack_tag "leaflet/show" %>
 <br><br>
 <div style="margin-left: 10px"><%= link_to "Back to shop", shop_path(@venue.shop), class: 'btn btn-outline-success' %></div>
+</div>
 </body>
