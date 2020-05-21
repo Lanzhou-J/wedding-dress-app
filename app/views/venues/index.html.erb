@@ -1,3 +1,13 @@
+<body class="dressshowbody">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div><%= link_to 'Home', root_path, method: :get, class:"navbar-brand"%></div>
+    <div style="margin-left: 15px;"><%= link_to 'Dresses', dresses_path, method: :get, class: 'nav-link navbarlink'%></div>
+    <div style="margin-left: 15px;"><%= link_to 'Shops', shops_path, method: :get, class: 'nav-link navbarlink'%></div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  </nav>
 <h1>My Venues</h1>
 
 <form id="search-form">
@@ -21,4 +31,5 @@
 
 
 <%= javascript_pack_tag "leaflet/index" %>
+</body>
 

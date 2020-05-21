@@ -10,7 +10,7 @@ class VenuesController < ApplicationController
   end
 
   def show
-    @venue = Venue.find(params[:id])
+    @venue = Venue.includes(:shop).find(params[:id])
     if params[:type] == "json"
       render json: { data: [@venue.latitude, @venue.longitude] }
     end
