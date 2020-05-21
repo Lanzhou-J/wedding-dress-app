@@ -41,3 +41,55 @@
   margin-left: 5px;
 
 }
+
+// New Cart
+.new-cart-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.new-cart {
+  text-align: center;
+  background-color: #f2f3f3;
+  padding: 10px 20px 20px 20px;
+  width: 500px;
+  height: 300px;
+  border-radius: 5px;
+}
+.added-item {
+  margin-top: 30px;
+}
+.added-item h3 {
+  color: black;
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 45px;
+}
+.cart_dresses_buttons {
+  margin-top: 70px;
+}
+.cart_dresses_buttons a {
+  text-decoration: none;
+}
+.cart-back-btn {
+  background-color: #ffffff;
+  border: 2px solid #ff2a49;
+  color: #ff2a49;
+  border-radius: 5px;
+  padding: 5px;
+}
+.cart-back-btn:hover {
+  color: #ffffff;
+  background-color: #ff2a49;
+}
+.cart-go-btn {
+  background-color: #ffffff;
+  border: 2px solid dodgerblue;
+  color: dodgerblue;
+  border-radius: 5px;
+  padding: 5px;
+}
+.cart-go-btn:hover {
+  color: #ffffff;
+  background-color: dodgerblue;
+}
