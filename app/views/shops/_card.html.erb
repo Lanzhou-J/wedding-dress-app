@@ -2,7 +2,7 @@
   <div class="card-body">
     <%= image_tag picture_for(dress) , alt: "#{dress.name} image", class: 'card-img-top img_fluid card-picture' %>
     <h5 class="card-title"><%= dress.name %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= dress.price %></h6>
+    <div class="card-subtitle text-muted"><%= "#{dress.price/100} $" %></div>
     <p class="card-text"><%= dress.shop.name %></p>
     <%= link_to 'View', dress_path(dress), class: 'btn btn-primary' %>
   </div>

@@ -13,10 +13,9 @@ class DressesController < ApplicationController
     # After the record is created and saved, redirect to the dress show page
     @dress = Dress.new(dress_params)
     @dress.shop = current_user.shop
-    p '*'*20
-    p dress_params
-    p '*'*20
-
+    @dress.price = dress_params[:price].to_i * 100
+    @dress.shipping_cost = dress_params[:shipping_cost].to_i * 100
+    
     if @dress.errors.any?
       render :new
     else
