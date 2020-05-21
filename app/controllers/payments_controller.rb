@@ -49,7 +49,8 @@ class PaymentsController < ApplicationController
           listing_ids: dress_ids
         }
       },
-      success_url: "#{root_url}payments/success?userId=#{current_user.id}&listingIds=#{dress_ids}",
+      success_url: "#{root_url}payments/success?userId=#{current_user.id}
+      &listingIds=#{dress_ids}",
       cancel_url: "#{root_url}listings"
     ).id
     render :json => { id: session_id, stripe_public_key: Rails.application.credentials.dig(:stripe, :public_key) }
