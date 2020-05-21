@@ -1,3 +1,5 @@
+# Base product of the web app platform, can be created by shop owners
+# and purchased by Users.
 class Dress < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }

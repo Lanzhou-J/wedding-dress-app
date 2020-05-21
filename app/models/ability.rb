@@ -5,14 +5,18 @@ class Ability
 
   def initialize(user)
     user ||= User.new
+    # Users can view all dresses/shops and create a shop
     can [:index, :show], Dress
     can [:index, :show, :new, :create], Shop
     if user.shop != nil
+      # Only shop owners can add products to their shops
       can [:new, :create], Dress
+      # Shop owners can only edit and destroy dresses they created
       can [:edit, :update, :destroy], Dress, shop_id: user.shop.id
       can [:edit, :update, :destroy], Shop, user_id: user.id
     end
     if user.is_admin == true
+      # Admin can create new or edit/delete all dresses, shops in the app
       can [:index, :show, :new, :create, :edit, :update, :destroy], Dress
       can [:index, :show, :new, :create, :edit, :update, :destroy], Shop
     end

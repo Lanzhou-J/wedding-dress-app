@@ -1,4 +1,4 @@
-# Connected to a user, holds the CartDresses that they have added
+# Belongs to a user, holds the CartDresses that they have added
 class Cart < ApplicationRecord
   belongs_to :user
   has_many :cart_dresses, dependent: :destroy
