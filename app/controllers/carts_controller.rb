@@ -35,6 +35,7 @@ class CartsController < ApplicationController
   end
 
   # Loads all items from the Cart
+  # Minimizing database queries
   def load_cart
     current_user.carts.last.cart_dresses.includes(:dress)
   end

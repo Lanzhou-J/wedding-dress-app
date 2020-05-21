@@ -1,3 +1,10 @@
 <h1 class="text-center">Edit <%= @shop.name %></h1>
-
+<div class="dress-formcontainer">
+<div class="dress-formwrapper">
 <%= render 'form' %>
+  <div style="margin-left: 15px;">
+  <%= link_to "Back", shop_path(@shop), class: 'btn btn-outline-success' %>
+  </div>
+  <br><br>
+</div>
+</div>

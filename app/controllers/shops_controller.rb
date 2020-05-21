@@ -38,7 +38,8 @@ class ShopsController < ApplicationController
 
   def index
     # This action returns all of the shops records and sends them to index view
-    @shops = Shop.all
+    # Minimize database queries
+    @shops = Shop.includes(:dresses).all
   end
 
   def show
@@ -61,6 +62,7 @@ class ShopsController < ApplicationController
   end
 
   def find_shop
-    @shop = Shop.find(params[:id])
+    # Minimize the database queries using ".include"
+    @shop = Shop.includes(:venue, :dresses).find(params[:id])
   end
 end

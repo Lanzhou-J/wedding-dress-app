@@ -1,3 +1,10 @@
 <h1 class="text-center">Edit <%= @dress.name %></h1>
-
+<div class="dress-formcontainer">
+<div class="dress-formwrapper">
 <%= render 'form' %>
+  <div style="margin-left: 15px;">
+  <%= link_to "Back", dress_path(@dress), class: 'btn btn-outline-success' %>
+  </div>
+  <br><br>
+</div>
+</div>
