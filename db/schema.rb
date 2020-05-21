@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_20_145131) do
+ActiveRecord::Schema.define(version: 2020_05_21_063930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2020_05_20_145131) do
     t.bigint "sleeve_id", null: false
     t.string "name"
     t.integer "shipping_cost"
-    t.boolean "is_new"
+    t.string "new_or_preowned"
     t.index ["length_id"], name: "index_dresses_on_length_id"
     t.index ["neckline_id"], name: "index_dresses_on_neckline_id"
     t.index ["shop_id"], name: "index_dresses_on_shop_id"

@@ -1,11 +1,17 @@
 class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:webhook]
 
+  # This action is to get dresses from the cart that has just been paid,
+  # and send the info to payment success page
   def success
     @dresses = current_user.carts.last.dresses
+    # A new cart is created once the previous payment is successful
     Cart.create(completed: false, user_id: current_user.id)
   end
 
+  # This action is for set up webhook so once a cart has been paid,
+  # the items in the cart will set to be "SOLD"
+  # and the cart is set to be "completed" 
   def webhook
     payment_id = params[:data][:object][:payment_intent]
     payment = Stripe::PaymentIntent.retrieve(payment_id)
