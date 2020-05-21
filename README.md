@@ -89,11 +89,13 @@ The target audience for the website are:
 - RSpec
 
 ## R12 - User stories for my app
-- As a Bridal wedding dresses shop owner (merchant) or designer, I want to use this platform to display all my products/designs of wedding dresses. I want to do business online and receive payments successfully. I also hope that the customers are able to find the location of my physical store so that they can pick up products if they want to or visit my shop in the future.
+- As a Bridal wedding dresses shop owner (merchant), I want to use this platform to display all my products/designs of wedding dresses. I want to do business online and receive payments successfully. I also hope that the customers are able to find the location of my physical store so that they can pick up products if they want to or visit my shop in the future.
 
 - As a customer, I want to use this platform to find wedding dresses that suit me. I also want to add a product to a cart so that I can purchase multiple items at once.
 
 - As a bride, I want to use the platform to sell preowned, second-hand wedding dresses after the wedding.
+
+- As a designer, I want to upload images of wedding dresses that I designed and sell them online.
 
 - As an admin of the platform, I want to manage the data (e.g. users, dresses, shops) of the app on a easy-to-use dashboard.
 
@@ -206,12 +208,13 @@ A shop belongs to a user, it has a venue that is related to the location attribu
 A dress belongs to a shop, it has one product picture attached. A wedding dress has many attributes, in order to make it easier for sellers to create a new dress I used dropdown select field for Silhoettes/Sizes/Sleeves/Necklines and Lengths. A silhouette/sleeve/neckline/length style has many dresses. Similarly, a size has many dresses.
 
 ## R18 - Discuss the database relations to be implemented:
-In my application I used 11 tables in my ERD. The relationships between the tables include one-to-one(e.g. user & shop), one-to-many(e.g. shop & dresses, user & carts), and many-to-many (carts & dresses). By using these database relations, I achieved CRUD functions for shops/dresses and can create carts for each user and allow them to add many items to the last cart(not completed/paid cart). 
+In my application I used 11 tables in my ERD. The relationships between the tables include one-to-one(e.g. user & shop), one-to-many(e.g. shop & dresses, user & carts), and many-to-many (carts & dresses). As you can see in ERD, the tables that have relationships are connected with each other(via foreign key or join table). By using these database relations, I achieved CRUD functions for shops/dresses and can create carts for each user and allow them to add many items to the last cart(not completed/paid cart). 
 
-For creating a wedding dress record, I use tables such as sizes/lengths/silhouettes/necklines/sleeves, these tables and dress have an "one-to-many" relationship, for example, a silhouette style "Mermaid" can have many dresses, while a dress can only have one silhouette style. These tables make it easier for shop owners to create a new dress using dropdown lists in the form. These relationships are achieved through the use of foreign keys, for example, in the dress table there are "size_id", "neckline_id", "silhoette_id", or "shop_id" etc.
+For creating a wedding dress record, I use tables such as sizes/lengths/silhouettes/necklines/sleeves, these tables and dress have an "one-to-many" relationship, for example, a silhouette style "Mermaid" can have many dresses, while a dress can only have one silhouette style. These tables make it easier for shop owners to create a new dress using dropdown lists in the form. These relationships are achieved through the use of foreign keys (a foreign key can reference another table), for example, in the dress table there are "size_id", "neckline_id", "silhoette_id", or "shop_id" etc.
 
 ## R19 - Database schema design:
 I designed the database ERD using dbdiagram.io, the DBML text is put in db directory. `db/dbdiagram.dbml`
+The schema design is self-explanatory, please see ERD provided in R14.
 
 ## R20 - Project Management
 ### Trello
@@ -222,4 +225,4 @@ Tasks were allocated and tracked using Trello. Trello board screenshots presente
 ![trello_1](app/assets/images/docs/20200516Trelloboard.png)
 
 ##### 20/05/2020
-![trello_2]()
+![trello_2](app/assets/images/docs/trello2.png)
