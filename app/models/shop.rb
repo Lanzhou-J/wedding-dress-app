@@ -13,6 +13,7 @@ class Shop < ApplicationRecord
   has_one :venue
 
   private
+
   # Once the shop is created, the corresponding venue is created
   # which is related to the location attribute of a shop
   def create_venue
