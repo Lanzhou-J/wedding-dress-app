@@ -220,10 +220,3 @@ Tasks were allocated and tracked using Trello. Trello board screenshots presente
 
 ##### 20/05/2020
 ![trello_2]()
-
-
-
-
-
-
-##### This action returns all of the listing records and sends them to the index view

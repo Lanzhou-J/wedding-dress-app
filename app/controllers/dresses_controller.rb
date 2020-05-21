@@ -3,16 +3,18 @@ class DressesController < ApplicationController
   before_action :find_dress, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
   def new
-    @dress = Dress.new
+    # new
   end
 
   def create
+    # This action can create a new dress record with valid attributes
+    # After the record is created and saved, redirect to the dress show page
     @dress = Dress.new(dress_params)
 
     if @dress.errors.any?
       render :new
     else
-      flash[:success] = "You successfully created a new product!"
+      flash[:success] = 'You successfully created a new product!'
       @dress.save
       redirect_to @dress
     end
@@ -31,6 +33,7 @@ class DressesController < ApplicationController
   end
 
   def index
+    # This action returns all of the dresses records and sends them to index view
     @dresses = Dress.all
   end
 

@@ -1,3 +1,4 @@
+# Shop belongs to a user and has many dresses
 class Shop < ApplicationRecord
   validates :name, presence: true
   validates :opening_time, presence: true
@@ -12,7 +13,8 @@ class Shop < ApplicationRecord
   has_one :venue
 
   private
-
+  # Once the shop is created, the corresponding venue is created
+  # which is related to the location attribute of a shop
   def create_venue
     venue = Venue.new(name: self.name, address: self.location, shop: self)
     venue.save
