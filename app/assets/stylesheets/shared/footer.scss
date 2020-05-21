@@ -1,0 +1,36 @@
+// bottom footer bar
+.bottom_footer {
+  margin-top: -4px;
+  width: 100vw;
+  height: 60px;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+
+  .footer-links {
+    background-color: white;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    .movielogo {
+      width: 30px;
+      height: 30px;
+      margin-top: -13px;
+      margin-left: 18px;
+    }
+  }
+  .footer-middlebox {
+    flex-grow: 1;
+  }
+  .footer-name {
+    color: white;
+    margin-right: 20px;
+    font-size: 16px;
+    margin-top: 14px;
+    // background-color: palegreen;
+  }
+}

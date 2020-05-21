@@ -41,7 +41,8 @@ class DressesController < ApplicationController
 
   def index
     # This action returns all of the dresses records and sends them to index view
-    @dresses = Dress.all
+    # Minimize database queries
+    @dresses = Dress.includes(:shop).all
   end
 
   def show
@@ -66,6 +67,6 @@ class DressesController < ApplicationController
   end
 
   def find_dress
-    @dress = Dress.find(params[:id])
+    @dress = Dress.includes(:silhouette, :neckline, :sleeve, :size, :length, :shop).find(params[:id])
   end
 end
