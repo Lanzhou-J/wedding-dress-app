@@ -16,6 +16,5 @@ class Shop < ApplicationRecord
   def create_venue
     venue = Venue.new(name: self.name, address: self.location, shop: self)
     venue.save
-    p 'venue is created'
   end
 end

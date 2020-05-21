@@ -13,7 +13,6 @@ class PaymentsController < ApplicationController
     # pp payment
     # puts "-"*20
     dress_ids = payment.metadata.listing_ids.split(",")
-    dresses = []
     dress_ids.each do |id|
       dress = Dress.find(id)
       dress.is_sold = true
@@ -53,6 +52,7 @@ class PaymentsController < ApplicationController
       &listingIds=#{dress_ids}",
       cancel_url: "#{root_url}listings"
     ).id
-    render :json => { id: session_id, stripe_public_key: Rails.application.credentials.dig(:stripe, :public_key) }
+    render :json => { id: session_id, stripe_public_key:
+     Rails.application.credentials.dig(:stripe, :public_key) }
   end
 end

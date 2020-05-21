@@ -16,9 +16,6 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
-  def create
-  end
-
   private
 
   # Parameters that are allowed to be sent through
@@ -32,7 +29,7 @@ class CartsController < ApplicationController
     @cart_dresses.each do |item|
       sum += item.dress.price
     end
-    return sum
+    sum
   end
 
   # Loads all items from the Cart

@@ -13,13 +13,10 @@ class ShopsController < ApplicationController
     if @shop.errors.any?
       render :new
     else
-      flash[:success] = "You successfully created a new shop!"
+      flash[:success] = 'You successfully created a new shop!'
       @shop.save
       redirect_to @shop
     end
-  end
-
-  def index
   end
 
   def update
@@ -50,7 +47,8 @@ class ShopsController < ApplicationController
 
   def shop_params
     params.require(:shop).permit(
-      :name, :merchant_or_personal, :location, :description, :has_physical_store, :picture
+      :name, :merchant_or_personal, :location,
+      :description, :has_physical_store, :picture
     )
   end
 
