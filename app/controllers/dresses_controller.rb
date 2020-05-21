@@ -1,5 +1,7 @@
 class DressesController < ApplicationController
+  # Authenticate user before all the actions
   before_action :authenticate_user!
+  # Before edit/show or delete a dress, find the dress using id from params
   before_action :find_dress, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
   def new
@@ -21,6 +23,7 @@ class DressesController < ApplicationController
   end
 
   def update
+   # This action can update information with edited dress attributes and redirect to dress show page
     if @dress.update(dress_params)
       redirect_to @dress
     else
@@ -42,6 +45,7 @@ class DressesController < ApplicationController
   end
 
   def destroy
+    # This action can destroy a dress record and redirect to the index page
     @dress.destroy
     redirect_to dresses_path
   end
