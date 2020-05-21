@@ -1,18 +1,26 @@
 # Beautiful in White - T2A2
-
-# R7 - Identification of the problem:
-COVID-19 pandemic outbreak has deeply impacted weddings and the wedding related industry worldwide. The estimated revenue loss from COVID-19 of bridal stores industry in Australia is around $108.6 million in 2019-2020. [Bridal Stores in Australia - Market Research Report](https://www.ibisworld.com/au/industry/bridal-stores/4002/) According to news reports, the outbreak is also changing the way people seek and shop for wedding dresses. Couples that prepare to get married in the future have either postponed shopping or shopped for wedding dresses online. [Link](https://www.ibisworld.com/industry-insider/press-releases/called-off-covid-19-has-profoundly-impacted-weddings-and-events/) I want to create an online platform for bridal store owners across the world and for brides who are looking for dream wedding dresses.
-
-# R8 - Why is it a problem that needs solving:
-Many couples' weddings have been temporarily canceled/postponed because of COVID-19. Due to social distancing, some bridal stores are not able to continue to make a profit. However, in foreseeable future, the wedding industry will still 'thrive' post-pandemic.[Link](https://www.nbcnews.com/pop-culture/pop-culture-news/how-coronavirus-could-change-wedding-culture-even-after-pandemic-ends-n1185506) In order to help local bridal shops turn loss into gain during this period of time and help them increase customer reach in the coming future. I build this platform which enables them to display their products in their "virtual shops" and receive payments through Stripe. 
-
-On the other hand, it is often hard for customers to find affordable wedding dresses that suit their needs in traditional physical stores. According to business analysis, resale wedding dresses are becoming more and more popular among modern brides. Eco-conscious millennial brides tend to seek wedding dresses from a fast-growing industry selling secondhand wedding dresses/accessories at bargain prices. [Link](https://www.businessinsider.sg/millennial-brides-buy-secondhand-wedding-gowns-2019-7) The app provides customers with different choices (brand new products and second-hand products). Customers can also resell their preowned wedding dresses to recoup the cost. Afterall, "Why would you spend thousands of dollars on a dress that you wear for one day and then keep it in the closet for years when you can resell it online?”
-
 ### R9 - A link (URL) to my deployed app:
 https://beautiful-in-white.herokuapp.com/
 
 ### R10 - A link to the GitHub repository:
 https://github.com/Lanzhou-J/wedding-dress-app
+
+### Testing accounts
+\# | Account Type | Username | Email | Password  
+--- | --- | --- | --- | ---
+1 | User |  shop1 | test1@gmail.com | password
+2 | User | shop2 | test2@gmail.com | password
+3 | User | person-Lan | test3@gmail.com | password
+4 | User | person-Amy | test4@gmail.com | password
+5 | Admin | person-admin | admin@gmail.com | password 
+
+## R7 - Identification of the problem:
+COVID-19 pandemic outbreak has deeply impacted weddings and the wedding related industry worldwide. The estimated revenue loss from COVID-19 of bridal stores industry in Australia is around $108.6 million in 2019-2020. [Bridal Stores in Australia - Market Research Report](https://www.ibisworld.com/au/industry/bridal-stores/4002/) According to news reports, the outbreak is also changing the way people seek and shop for wedding dresses. Couples that prepare to get married in the future have either postponed shopping or shopped for wedding dresses online. [Link](https://www.ibisworld.com/industry-insider/press-releases/called-off-covid-19-has-profoundly-impacted-weddings-and-events/) I want to create an online platform for bridal store owners across the world and for brides who are looking for dream wedding dresses.
+
+## R8 - Why is it a problem that needs solving:
+Many couples' weddings have been temporarily canceled/postponed because of COVID-19. Due to social distancing, some bridal stores are not able to continue to make a profit. However, in foreseeable future, the wedding industry will still 'thrive' post-pandemic.[Link](https://www.nbcnews.com/pop-culture/pop-culture-news/how-coronavirus-could-change-wedding-culture-even-after-pandemic-ends-n1185506) In order to help local bridal shops turn loss into gain during this period of time and help them increase customer reach in the coming future. I build this platform which enables them to display their products in their "virtual shops" and receive payments through Stripe. 
+
+On the other hand, it is often hard for customers to find affordable wedding dresses that suit their needs in traditional physical stores. According to business analysis, resale wedding dresses are becoming more and more popular among modern brides. Eco-conscious millennial brides tend to seek wedding dresses from a fast-growing industry selling secondhand wedding dresses/accessories at bargain prices. [Link](https://www.businessinsider.sg/millennial-brides-buy-secondhand-wedding-gowns-2019-7) The app provides customers with different choices (brand new products and second-hand products). Customers can also resell their preowned wedding dresses to recoup the cost. Afterall, "Why would you spend thousands of dollars on a dress that you wear for one day and then keep it in the closet for years when you can resell it online?”
 
 # R11 - Description of my marketplace app:
 
@@ -158,12 +166,49 @@ In order to attach pictures to records, I used `has_one_attached` macro both in 
 - Devise: A ruby gem used for user authentication.
 - Cancancan: A ruby gem used for user authorization.
 - RailsAdmin: A Rails engine that provides a clean interface for managing data that can be used by admins of the app.
+- PostgreSQL: I used this free relational database to store/manage records for the app.
 
 # R17 - Describe my projects models in terms of the relationships they have with each other.
+### Users
+- has many carts
+- has one shop
+
+Once a user sign up to the website, his or her first cart will be created at the same time. If a user is a seller, he/she can choose to create a shop (and that shop belongs to him/her)
+### Shops
+- has many dresses
+- belongs to user
+- has one venue
+- has one picture attached
+### Venues
+- belongs to shop
+
+A shop belongs to a user, it has a venue that is related to the location attribute of the shop. A shop has many dresses so shop owner can list products in the shop show page. A shop has one attached picture to attract more customers.
+
+### Dresses
+- belongs to shop
+- belongs to size
+- belongs to length
+- belongs to neckline
+- belongs to silhouette
+- belongs to sleeve
+- has one picture attached
+### Silhouettes
+- has many dresses
+### Sizes
+- has many dresses
+### Sleeves
+- has many dresses
+### Necklines
+- has many dresses
+### Lengths
+- has many dresses
+
+A dress belongs to a shop, it has one product picture attached. A wedding dress has many attributes, in order to make it easier for sellers to create a new dress I used dropdown select field for Silhoettes/Sizes/Sleeves/Necklines and Lengths. A silhouette/sleeve/neckline/length style has many dresses. Similarly, a size has many dresses.
 
 # Discuss the database relations to be implemented:
 
 # Database schema design:
+I designed the database ERD using dbdiagram.io, the DBML text
 
 # Project Management
 ## Trello
@@ -177,27 +222,8 @@ Tasks were allocated and tracked using Trello. Trello board screenshots presente
 ![trello_2]()
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# This action returns all of the listing records and sends them to the index view
+##### This action returns all of the listing records and sends them to the index view
