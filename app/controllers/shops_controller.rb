@@ -24,7 +24,7 @@ class ShopsController < ApplicationController
   end
 
   def update
-   # This action can update information with edited shop info and redirect to shop show page
+    # This action can update information with edited shop info and redirect to shop show page
     if @shop.update(shop_params)
       redirect_to @shop
     else

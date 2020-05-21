@@ -15,7 +15,7 @@ class DressesController < ApplicationController
     @dress.shop = current_user.shop
     @dress.price = dress_params[:price].to_i * 100
     @dress.shipping_cost = dress_params[:shipping_cost].to_i * 100
-    
+
     if @dress.errors.any?
       render :new
     else
@@ -26,7 +26,7 @@ class DressesController < ApplicationController
   end
 
   def update
-   # This action can update information with edited dress attributes and redirect to dress show page
+    # This action can update information with edited dress attributes and redirect to dress show page
     if @dress.update(dress_params)
       redirect_to @dress
     else
