@@ -11,7 +11,7 @@ class PaymentsController < ApplicationController
 
   # This action is for set up webhook so once a cart has been paid,
   # the items in the cart will set to be "SOLD"
-  # and the cart is set to be "completed" 
+  # and the cart is set to be "completed"
   def webhook
     payment_id = params[:data][:object][:payment_intent]
     payment = Stripe::PaymentIntent.retrieve(payment_id)
