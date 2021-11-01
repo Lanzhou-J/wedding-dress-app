@@ -5,15 +5,6 @@ https://beautiful-in-white.herokuapp.com/
 ### R10 - A link to the GitHub repository:
 https://github.com/Lanzhou-J/wedding-dress-app
 
-### Testing accounts
-\# | Account Type | Username | Email | Password | feature
---- | --- | --- | --- | --- | ---
-1 | User |  shop1 | test1@gmail.com | password | shop owner
-2 | User | shop2 | test2@gmail.com | password | shop owner
-3 | User | person-Lan | test3@gmail.com | password | personal shop owner
-4 | User | person-Amy | test4@gmail.com | password | user without a shop
-5 | Admin | person-admin | admin@gmail.com | password | admin
-
 ## R7 - Identification of the problem:
 COVID-19 pandemic outbreak has deeply impacted weddings and the wedding related industry worldwide. The estimated revenue loss from COVID-19 of bridal stores industry in Australia is around $108.6 million in 2019-2020. [Bridal Stores in Australia - Market Research Report](https://www.ibisworld.com/au/industry/bridal-stores/4002/) According to news reports, the outbreak is also changing the way people seek and shop for wedding dresses. Couples that prepare to get married in the future have either postponed shopping or shopped for wedding dresses online. [Link](https://www.ibisworld.com/industry-insider/press-releases/called-off-covid-19-has-profoundly-impacted-weddings-and-events/) I want to create an online platform for bridal store owners across the world and for brides who are looking for dream wedding dresses.
 
